@@ -3,9 +3,10 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/base/button"
+import { Badge } from "@/components/ui/base/badge"
+import { SocialLinks } from "../ui/social-links"
 
 export function HeroSection() {
   return (
@@ -37,32 +38,10 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base bg-transparent">
-                Get In Touch
+                <Link href="#contact">Get In Touch</Link>
               </Button>
             </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href="https://github.com/SimplyAName"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Github className="size-6" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/michael-loney-314634174/"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Linkedin className="size-6" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link
-                href="mailto:michael.loney137+devsite@gmail.com"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Mail className="size-6" />
-                <span className="sr-only">Email</span>
-              </Link>
-            </div>
+            <SocialLinks />
           </motion.div>
 
           <motion.div

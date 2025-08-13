@@ -1,16 +1,18 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
+import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/base/badge';
 
 const skills = [
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "Python", level: 75 },
-  { name: "TypeScript", level: 85 },
-  { name: "Next.js", level: 80 },
-]
+  { name: 'JavaScript', level: 90 },
+  { name: 'React', level: 85 },
+  { name: 'Next.js', level: 80 },
+  { name: 'Svelet', level: 80 },
+  { name: 'Java', level: 75 },
+  { name: 'Spring Boot', level: 85 },
+  { name: 'Dart', level: 80 },
+  { name: 'Flutter', level: 60 },
+];
 
 export function AboutSection() {
   return (
@@ -27,10 +29,12 @@ export function AboutSection() {
           <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
             About Me
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Passionate About Technology</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Passionate About Technology
+          </h2>
           <p className="max-w-[800px] text-muted-foreground md:text-lg">
-            With over 5 years of experience in software development, I specialize in creating robust, scalable
-            applications that solve real-world problems.
+            With over 5 years of experience in software development, I specialize in creating
+            robust, scalable applications that solve real-world problems.
           </p>
         </motion.div>
 
@@ -43,21 +47,29 @@ export function AboutSection() {
           >
             <h3 className="text-2xl font-bold mb-4">My Journey</h3>
             <p className="text-muted-foreground mb-6">
-              I started my journey in software development during college, where I discovered my passion for creating
-              digital solutions. Since then, I've worked with startups and established companies, helping them build
-              innovative products and scale their technology.
+              I began my journey in software development during high school, initially creating mods
+              for games. Recognizing my logical mindset, I pursued an exam for my school's computer
+              science class, where I discovered a passion for building efficient and creative
+              solutions.
+            </p>
+            <p>
+              Since then, I have attended university and launched startups while studying, gaining
+              experience in developing robust, real-world systems that scale with both technology
+              and teams.
             </p>
             <p className="text-muted-foreground mb-6">
-              I believe in writing clean, maintainable code and staying up-to-date with the latest technologies and best
-              practices. When I'm not coding, you can find me contributing to open-source projects or learning new
-              technologies.
+              I believe in writing clean, maintainable code and staying up-to-date with the latest
+              technologies and best practices. When I'm not working, you can find me learning new
+              technologies or doing my best not to lose my online games.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Problem Solving", "Team Leadership", "Agile Development", "Code Review"].map((trait) => (
-                <Badge key={trait} variant="secondary" className="rounded-full">
-                  {trait}
-                </Badge>
-              ))}
+              {['Problem Solving', 'Team Skills', 'Agile Development', 'Code Review'].map(
+                (trait) => (
+                  <Badge key={trait} variant="secondary" className="rounded-full">
+                    {trait}
+                  </Badge>
+                )
+              )}
             </div>
           </motion.div>
 
@@ -91,5 +103,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

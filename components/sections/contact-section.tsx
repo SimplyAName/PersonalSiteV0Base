@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Mail, Download, Github, Linkedin } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Mail, Download } from "lucide-react"
+import { Button } from "@/components/ui/base/button"
+import { SocialLinks } from "@/components/ui/social-links"
 
 export function ContactSection() {
   return (
@@ -44,29 +45,12 @@ export function ContactSection() {
               Download CV
             </Button>
           </div>
-          <div className="flex items-center gap-6 mt-8">
-            <Link
-              href="https://github.com/johndoe"
-              className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-            >
-              <Github className="size-8" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-            <Link
-              href="https://linkedin.com/in/johndoe"
-              className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-            >
-              <Linkedin className="size-8" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link
-              href="mailto:john.doe@example.com"
-              className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-            >
-              <Mail className="size-8" />
-              <span className="sr-only">Email</span>
-            </Link>
-          </div>
+          <SocialLinks 
+            size={8}
+            baseColor="text-primary-foreground/80"
+            hoverColor="text-primary-foreground"
+            className="mt-8 gap-6"
+          />
         </motion.div>
       </div>
     </section>

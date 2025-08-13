@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Github, ExternalLink } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/base/badge"
+import { Button } from "@/components/ui/base/button"
+import { Card, CardContent } from "@/components/ui/base/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/base/tabs"
 
 const projects = [
   {
