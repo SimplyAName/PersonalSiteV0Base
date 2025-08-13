@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Logo } from '@/components/ui/logo';
+import { Logo } from '@/components/ui/personal-logo';
 
 interface FooterProps {
   activeSection: string;

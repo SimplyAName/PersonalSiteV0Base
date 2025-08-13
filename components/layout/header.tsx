@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun, Download } from 'lucide-react';
 import { Button } from '@/components/ui/base/button';
 import { useTheme } from 'next-themes';
-import { Logo } from '@/components/ui/logo';
+import { Logo } from '@/components/ui/personal-logo';
 
 interface HeaderProps {
   activeSection: string;
