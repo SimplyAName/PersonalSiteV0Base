@@ -80,7 +80,7 @@ export function ExperienceSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`relative flex ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
-                <Card className="overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur md:w-3/4">
+                <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm md:w-3/4">
                   <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                       <div>
@@ -106,7 +106,7 @@ export function ExperienceSection() {
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, j) => (
                           <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <Check className="size-4 text-primary mt-0.5 flex-shrink-0" />
+                            <Check className="size-4 text-primary mt-0.5 shrink-0" />
                             <span>{achievement}</span>
                           </li>
                         ))}

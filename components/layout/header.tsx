@@ -28,7 +28,7 @@ export function Header({ activeSection }: HeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-background/80 shadow-sm`}
+      className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-background/80 shadow-xs`}
     >
       <div className="container flex h-16 items-center justify-between">
         <Logo size={8} />

@@ -52,7 +52,7 @@ const projects = [
 export function ProjectsSection() {
   return (
     <section id="projects" className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export function ProjectsSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
-                    <Card className="overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-lg group">
+                    <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm transition-all hover:shadow-lg group">
                       <div className="relative overflow-hidden">
                         <Image
                           src={project.image || "/placeholder.svg"}
@@ -145,7 +145,7 @@ export function ProjectsSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                 >
-                  <Card className="overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-lg group h-full">
+                  <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm transition-all hover:shadow-lg group h-full">
                     <div className="relative overflow-hidden">
                       <Image
                         src={project.image || "/placeholder.svg"}
@@ -169,7 +169,7 @@ export function ProjectsSection() {
                     </div>
                     <CardContent className="p-4 flex flex-col h-full">
                       <h3 className="font-bold mb-2">{project.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4 flex-grow">{project.description}</p>
+                      <p className="text-sm text-muted-foreground mb-4 grow">{project.description}</p>
                       <div className="flex flex-wrap gap-1">
                         {project.technologies.slice(0, 3).map((tech) => (
                           <Badge key={tech} variant="secondary" className="rounded-full text-xs">

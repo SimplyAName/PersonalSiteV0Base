@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
       <div className="container p-6 md:p-8 relative">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]"></div>
+        <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]"></div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
@@ -21,7 +21,7 @@ export function HeroSection() {
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Hi, I'm{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/70">
                 Michael Loney
               </span>
             </h1>
@@ -51,7 +51,7 @@ export function HeroSection() {
             className="relative"
           >
             <div className="relative mx-auto max-w-md">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/40 bg-gradient-to-b from-background to-muted/20">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/40 bg-linear-to-b from-background to-muted/20">
                 <Image
                   src="/placeholder.svg?height=400&width=400&text=Profile+Photo"
                   width={400}
@@ -61,8 +61,8 @@ export function HeroSection() {
                   priority
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 -z-10 h-[200px] w-[200px] rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl opacity-70"></div>
-              <div className="absolute -top-6 -left-6 -z-10 h-[200px] w-[200px] rounded-full bg-gradient-to-br from-secondary/30 to-primary/30 blur-3xl opacity-70"></div>
+              <div className="absolute -bottom-6 -right-6 -z-10 h-[200px] w-[200px] rounded-full bg-linear-to-br from-primary/30 to-secondary/30 blur-3xl opacity-70"></div>
+              <div className="absolute -top-6 -left-6 -z-10 h-[200px] w-[200px] rounded-full bg-linear-to-br from-secondary/30 to-primary/30 blur-3xl opacity-70"></div>
             </div>
           </motion.div>
         </div>

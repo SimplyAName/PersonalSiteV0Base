@@ -37,7 +37,7 @@ export default function PortfolioPage() {
   }, [])
 
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="flex min-h-dvh flex-col">
       <Header activeSection={activeSection} />
       <main className="flex-1">
         <HeroSection />
