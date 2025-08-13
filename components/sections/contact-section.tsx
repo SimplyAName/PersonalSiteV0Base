@@ -1,10 +1,10 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Mail, Download } from "lucide-react"
-import { Button } from "@/components/ui/base/button"
-import { SocialLinks } from "@/components/ui/social-links"
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Mail, Download } from 'lucide-react';
+import { Button } from '@/components/ui/base/button';
+import { SocialLinks } from '@/components/ui/social-links';
 
 export function ContactSection() {
   return (
@@ -24,14 +24,21 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center space-y-6 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">Let's Work Together</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+            Let's Work Together
+          </h2>
           <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-            I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas
-            to life.
+            I'm always interested in new opportunities and exciting projects. Let's discuss how we
+            can bring your ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Button size="lg" variant="secondary" className="rounded-full h-12 px-8 text-base" asChild>
-              <Link href="mailto:john.doe@example.com">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="rounded-full h-12 px-8 text-base"
+              asChild
+            >
+              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
                 <Mail className="mr-2 size-4" />
                 Send Email
               </Link>
@@ -45,7 +52,7 @@ export function ContactSection() {
               Download CV
             </Button>
           </div>
-          <SocialLinks 
+          <SocialLinks
             size={8}
             baseColor="text-primary-foreground/80"
             hoverColor="text-primary-foreground"
@@ -54,5 +61,5 @@ export function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,22 +1,22 @@
-import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
-import { cn } from "@/lib/utils"
+import Link from 'next/link';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface SocialLinksProps {
-  size?: number
-  baseColor?: string
-  hoverColor?: string
-  className?: string
+  size?: number;
+  baseColor?: string;
+  hoverColor?: string;
+  className?: string;
 }
 
-export function SocialLinks({ 
-  size = 8, 
-  baseColor = "text-muted-foreground",
-  hoverColor = "text-foreground",
-  className
+export function SocialLinks({
+  size = 8,
+  baseColor = 'text-muted-foreground',
+  hoverColor = 'text-foreground',
+  className,
 }: SocialLinksProps) {
   return (
-    <div className={cn("flex items-center gap-4", className)}>
+    <div className={cn('flex items-center gap-4', className)}>
       <Link
         href="https://github.com/SimplyAName"
         className={`${baseColor} hover:${hoverColor} transition-colors`}
@@ -32,12 +32,12 @@ export function SocialLinks({
         <span className="sr-only">LinkedIn</span>
       </Link>
       <Link
-        href="mailto:michael.loney137+devsite@gmail.com"
+        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
         className={`${baseColor} hover:${hoverColor} transition-colors`}
       >
         <Mail className={`size-${size}`} />
         <span className="sr-only">Email</span>
       </Link>
     </div>
-  )
+  );
 }
