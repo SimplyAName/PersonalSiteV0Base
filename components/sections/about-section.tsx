@@ -46,22 +46,24 @@ export function AboutSection() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-2xl font-bold mb-4">My Journey</h3>
-            <p className="text-muted-foreground mb-6">
-              I began my journey in software development during high school, initially creating mods
-              for games. Recognizing my logical mindset, I pursued an exam for my school's computer
-              science class, where I discovered a passion for building efficient and creative
-              solutions.
-            </p>
-            <p>
-              Since then, I have attended university and launched startups while studying, gaining
-              experience in developing robust, real-world systems that scale with both technology
-              and teams.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              I believe in writing clean, maintainable code and staying up-to-date with the latest
-              technologies and best practices. When I'm not working, you can find me learning new
-              technologies or doing my best not to lose my online games.
-            </p>
+            <div className="text-muted-foreground mb-6 flex flex-col gap-2">
+              <p>
+                I began my journey in software development during high school, initially creating
+                mods for games. Recognizing my logical mindset, I pursued an exam for my school's
+                computer science class, where I discovered a passion for building efficient and
+                creative solutions.
+              </p>
+              <p>
+                Since then, I have attended university and launched a startup while studying, gaining
+                experience in developing robust, real-world systems that scale with both technology
+                and teams.
+              </p>
+              <p>
+                I believe in writing clean, maintainable code and staying up-to-date with the latest
+                technologies and best practices. When I'm not working, you can find me learning new
+                technologies or doing my best not to lose my online games.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-2">
               {['Problem Solving', 'Team Skills', 'Agile Development', 'Code Review'].map(
                 (trait) => (
