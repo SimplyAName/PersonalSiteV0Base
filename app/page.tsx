@@ -30,14 +30,33 @@ export default function PortfolioPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
     setMounted(true)
+
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
+      }
+
+      // Scroll spy functionality
+      const sections = ["about", "experience", "projects", "contact"]
+      const scrollPosition = window.scrollY + 100 // Offset for better UX
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i])
+          break
+        }
+      }
+
+      // Clear active section if at the top
+      if (window.scrollY < 100) {
+        setActiveSection("")
       }
     }
 
@@ -171,25 +190,37 @@ export default function PortfolioPage() {
           <nav className="hidden md:flex gap-8">
             <Link
               href="#about"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors hover:text-foreground ${
+                activeSection === "about" ? "text-foreground border-b-2 border-primary pb-1" : "text-muted-foreground"
+              }`}
             >
               About
             </Link>
             <Link
               href="#experience"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors hover:text-foreground ${
+                activeSection === "experience"
+                  ? "text-foreground border-b-2 border-primary pb-1"
+                  : "text-muted-foreground"
+              }`}
             >
               Experience
             </Link>
             <Link
               href="#projects"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors hover:text-foreground ${
+                activeSection === "projects"
+                  ? "text-foreground border-b-2 border-primary pb-1"
+                  : "text-muted-foreground"
+              }`}
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors hover:text-foreground ${
+                activeSection === "contact" ? "text-foreground border-b-2 border-primary pb-1" : "text-muted-foreground"
+              }`}
             >
               Contact
             </Link>
@@ -223,16 +254,48 @@ export default function PortfolioPage() {
             className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b"
           >
             <div className="container py-4 flex flex-col gap-4">
-              <Link href="#about" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="#about"
+                className={`py-2 text-sm font-medium transition-colors ${
+                  activeSection === "about"
+                    ? "text-primary font-semibold border-l-2 border-primary pl-2"
+                    : "text-foreground hover:text-primary"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 About
               </Link>
-              <Link href="#experience" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="#experience"
+                className={`py-2 text-sm font-medium transition-colors ${
+                  activeSection === "experience"
+                    ? "text-primary font-semibold border-l-2 border-primary pl-2"
+                    : "text-foreground hover:text-primary"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Experience
               </Link>
-              <Link href="#projects" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="#projects"
+                className={`py-2 text-sm font-medium transition-colors ${
+                  activeSection === "projects"
+                    ? "text-primary font-semibold border-l-2 border-primary pl-2"
+                    : "text-foreground hover:text-primary"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Projects
               </Link>
-              <Link href="#contact" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="#contact"
+                className={`py-2 text-sm font-medium transition-colors ${
+                  activeSection === "contact"
+                    ? "text-primary font-semibold border-l-2 border-primary pl-2"
+                    : "text-foreground hover:text-primary"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Contact
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
@@ -248,8 +311,8 @@ export default function PortfolioPage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
-          <div className="container px-4 md:px-6 relative">
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+          <div className="container p-6 md:p-8 relative">
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]"></div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -274,9 +337,11 @@ export default function PortfolioPage() {
                   building scalable applications that make a difference.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                    View My Work
-                    <ArrowRight className="ml-2 size-4" />
+                  <Button size="lg" className="rounded-full h-12 px-8 text-base" asChild>
+                    <Link href="#projects" className="flex items-center">
+                      View My Work
+                      <ArrowRight className="ml-2 size-4" />
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base bg-transparent">
                     Get In Touch
@@ -298,7 +363,7 @@ export default function PortfolioPage() {
                     <span className="sr-only">LinkedIn</span>
                   </Link>
                   <Link
-                    href="mailto:john.doe@example.com"
+                    href="mailto:michael.loney137+devsite@gmail.com"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <Mail className="size-6" />
@@ -441,46 +506,42 @@ export default function PortfolioPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className={`relative flex items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                    className={`relative flex ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
-                    <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-primary rounded-full border-4 border-background"></div>
-
-                    <div className={`flex-1 ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"} ml-12 md:ml-0`}>
-                      <Card className="overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur">
-                        <CardHeader>
-                          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                            <div>
-                              <CardTitle className="text-xl">{exp.title}</CardTitle>
-                              <p className="text-primary font-medium">{exp.company}</p>
-                            </div>
-                            <div className="flex flex-col md:items-end text-sm text-muted-foreground">
-                              <div className="flex items-center gap-1">
-                                <Calendar className="size-4" />
-                                <span>{exp.period}</span>
-                              </div>
-                              <div className="flex items-center gap-1">
-                                <MapPin className="size-4" />
-                                <span>{exp.location}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <Card className="overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur md:w-3/4">
+                      <CardHeader>
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                           <div>
-                            <h4 className="font-medium mb-2">Key Achievements:</h4>
-                            <ul className="space-y-1">
-                              {exp.achievements.map((achievement, j) => (
-                                <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                  <Check className="size-4 text-primary mt-0.5 flex-shrink-0" />
-                                  <span>{achievement}</span>
-                                </li>
-                              ))}
-                            </ul>
+                            <CardTitle className="text-xl">{exp.title}</CardTitle>
+                            <p className="text-primary font-medium">{exp.company}</p>
                           </div>
-                        </CardContent>
-                      </Card>
-                    </div>
+                          <div className="flex flex-col md:items-end text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Calendar className="size-4" />
+                              <span>{exp.period}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <MapPin className="size-4" />
+                              <span>{exp.location}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground mb-4">{exp.description}</p>
+                        <div>
+                          <h4 className="font-medium mb-2">Key Achievements:</h4>
+                          <ul className="space-y-1">
+                            {exp.achievements.map((achievement, j) => (
+                              <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <Check className="size-4 text-primary mt-0.5 flex-shrink-0" />
+                                <span>{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </motion.div>
                 ))}
               </div>
@@ -706,19 +767,36 @@ export default function PortfolioPage() {
               <span>John Doe</span>
             </div>
             <div className="flex gap-4">
-              <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#about"
+                className={`text-sm transition-colors hover:text-foreground ${
+                  activeSection === "about" ? "text-foreground font-medium" : "text-muted-foreground"
+                }`}
+              >
                 About
               </Link>
               <Link
                 href="#experience"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-sm transition-colors hover:text-foreground ${
+                  activeSection === "experience" ? "text-foreground font-medium" : "text-muted-foreground"
+                }`}
               >
                 Experience
               </Link>
-              <Link href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#projects"
+                className={`text-sm transition-colors hover:text-foreground ${
+                  activeSection === "projects" ? "text-foreground font-medium" : "text-muted-foreground"
+                }`}
+              >
                 Projects
               </Link>
-              <Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#contact"
+                className={`text-sm transition-colors hover:text-foreground ${
+                  activeSection === "contact" ? "text-foreground font-medium" : "text-muted-foreground"
+                }`}
+              >
                 Contact
               </Link>
             </div>
