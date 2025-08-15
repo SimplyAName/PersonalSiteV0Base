@@ -1,12 +1,12 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/base/button"
-import { Badge } from "@/components/ui/base/badge"
-import { SocialLinks } from "../ui/social-links"
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/base/button';
+import { Badge } from '@/components/ui/base/badge';
+import { SocialLinks } from '../ui/social-links';
 
 export function HeroSection() {
   return (
@@ -15,20 +15,30 @@ export function HeroSection() {
         <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]"></div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Badge
+              className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
+            >
               Available for Work
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Hi, I'm{" "}
+              Hi, I'm{' '}
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/70">
                 Michael Loney
               </span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">Full Stack Developer & Software Engineer</h2>
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+              Full Stack Developer & Software Engineer
+            </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              I create exceptional digital experiences through clean code and innovative solutions. Passionate about
-              building scalable applications that make a difference.
+              I'm passionate about new technology and writing software that makes a difference. I
+              create robust, scaleable applications through clean code practices and innovative
+              solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="rounded-full h-12 px-8 text-base" asChild>
@@ -37,7 +47,11 @@ export function HeroSection() {
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base bg-transparent">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full h-12 px-8 text-base bg-transparent"
+              >
                 <Link href="#contact">Get In Touch</Link>
               </Button>
             </div>
@@ -68,5 +82,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
