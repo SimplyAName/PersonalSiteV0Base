@@ -1,39 +1,68 @@
-export const projects = [
+/**
+ * Represents a single project with its metadata
+ */
+export type Project = {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  codebase?: string;
+  demo?: string;
+  featured: boolean;
+};
+
+/**
+ * An array of project objects representing various software projects.
+ *
+ * Each project contains metadata such as title, description, image, technologies used,
+ * GitHub repository link, demo link, and a featured flag.
+ *
+ * @remarks
+ * - Some projects may not have a GitHub or demo link.
+ * - The `featured` property indicates if the project should be highlighted.
+ *
+ * @example
+ * ```typescript
+ * projects[0].title // "Pals Vs Pokemon"
+ * projects[1].technologies // ["Laravel", "Flutter", "IOS", "Android", "AWS"]
+ * ```
+ */
+export const projects: Project[] = [
   {
     title: "Pals Vs Pokemon",
+    subtitle: "Pal or Pokemon? Find out before Nintendo lawyers",
     description:
       "Pals Vs Pokemon is a little game created using SvelteKit. It is design to be popped up by anyone using Docker and Liquibase",
     image: "/placeholder.svg?height=300&width=400&text=E-Commerce+Platform",
     technologies: ["SvelteKit", "Liquibase", "Prisma", "Tailwind"],
-    github: "https://github.com/SimplyAName/PalVsPokemon",
+    codebase: "https://github.com/SimplyAName/PalVsPokemon",
     demo: "https://www.palsvspokemon.com/",
     featured: true,
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team collaboration features.",
-    image: "/placeholder.svg?height=300&width=400&text=Task+Manager",
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    github: "https://github.com/johndoe/task-manager",
-    demo: "https://tasks.johndoe.dev",
+    title: "Portfolio Website",
+    subtitle: "Personal website you are looking at right now!",
+    description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools",
+    image: "/placeholder.svg?height=300&width=400&text=Portfolio+Site",
+    technologies: ["Next.js", "Tailwind CSS", "AI tooling"],
+    codebase: "https://github.com/SimplyAName/PersonalSiteV0Base",
+    demo: "https://loney.dev",
     featured: true,
   },
   {
     title: "GAIN",
+    subtitle: "",
     description: "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
     image: "/placeholder.svg?height=300&width=400&text=GAIN",
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
-    github: "https://github.com/johndoe/weather-dashboard",
-    demo: "https://weather.johndoe.dev",
     featured: false,
-  },
-  {
-    title: "Portfolio Website (This site!)",
-    description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools",
-    image: "/placeholder.svg?height=300&width=400&text=Portfolio+Site",
-    technologies: ["Next.js", "Tailwind CSS", "AI tooling"],
-    github: "https://github.com/SimplyAName/PersonalSiteV0Base",
-    demo: "https://loney.dev",
+  },{
+    title: "Gun Of Many Card (WIP)",
+    subtitle: "Rouge-like PvP battles, built with Godot",
+    description: "Play round after round until on hits the score limit. Every loss the loser gets stronger, picking a card to upgrade their character with a Fire Flower, Bullet speed, increased HP etc",
+    image: "/placeholder.svg?height=300&width=400&text=GAIN",
+    technologies: ["Godot", "GDScript", "Blender"],
     featured: false,
   },
 ]

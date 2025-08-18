@@ -1,5 +1,6 @@
-export interface ExperienceRow {
+export interface Experience {
     title: string;
+    subtitle: string;
     company: string;
     startDate: string;
     endDate: string;
@@ -9,57 +10,69 @@ export interface ExperienceRow {
     technologies: Array<string>;
 } 
 
-export const experiences: Array<ExperienceRow> = [
+export const experiences: Experience[] = [
   {
     title: "Software Engineer",
+    subtitle: "Bespoke Product Team",
     company: "IQUW/ERS",
     startDate: "2022",
     endDate: "Present",
-    location: "San Francisco, CA",
+    location: "Swansea, UK (Remote)",
     description:
-      "Led development of scalable web applications using React and Node.js. Mentored junior developers and implemented CI/CD pipelines.",
+      `Worked with a team of developers, creating scalable backend services and internal tools. 
+      I designed and implemented our first CI/CD pipelines as well pushed for new technologies and features that allowed us to automate our tasks, freeing up more time to code.`,
     achievements: [
-      "Increased application performance by 40%",
-      "Led a team of 5 developers",
+      "Implemented CI/CD to improve code quality and consistency",
+      "Brough new technologies into the company",
       "Implemented automated testing reducing bugs by 60%",
     ],
     technologies: [
-        "React",
+        "React / Next.js",
         "Svelet",
         "Tailwind",
         "Spring Boot",
         "Azure"
     ]
-  },
-  {
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    startDate: "2020",
-    endDate: "2022",
-    location: "Remote",
+  },{
+    title: "Freelance Software Developer",
+    subtitle: "Start up landing page",
+    company: "Theatrix",
+    startDate: "2019",
+    endDate: "2020",
+    location: "Swansea, UK",
     description:
-      "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces.",
+      `I created on a landing page for a new startup, generating sign ups as well as a prototype IOS app used by the owner to pitch and gain funding.\n
+      MailChip and AWS S3 bucket were used to host it and manage customer interest. They both offer a free tier so the site could have as little costs as possible as it was a new startup`,
     achievements: [
-      "Built 15+ client projects from scratch",
-      "Reduced development time by 30% through reusable components",
-      "Improved user engagement by 25%",
+      "Fast turn around of prototypes",
+      "Created on nearly £0 budget",
     ],
-    technologies : [
-        ""
+    technologies: [
+        "Flutter",
+        "PHP",
+        "Laravel",
+        "AWS",
+        "IOS",
+        "Android"
     ]
   },
   {
-    title: "Director/Software Developer",
+    title: "Director / Software Developer",
+    subtitle: "My own business",
     company: "GAIN Applications",
-    startDate: "2018",
-    endDate: "2020",
-    location: "Swansea",
+    startDate: "2017",
+    endDate: "2021",
+    location: "Swansea, UK",
     description:
-      "Assisted in developing responsive websites and web applications. Gained experience in various frameworks and databases.",
+      `My business I started in university, focused on providing a platform independent businesses. 
+      I started it with a partner, I was the developer and he was PR / customer acquisition.
+      Together we worked as a great team, release a mobiles app on IOS and Android and gaining thousands of users and nearly 100 business.
+      Unfortunately it shut down during COVID as it relied on brick and mortar stores and we had both moved out of Swansea at the end of university so we had to start from step 1 again`,
     achievements: [
-      "Contributed to 20+ successful projects",
+      "Released IOS and Android apps",
+      "Multiple competitions and pitches won, gaining funding",
+      "1000's of customers",
       "Learned 5 new programming languages",
-      "Received 'Rising Star' award",
     ],
     technologies: [
         "Flutter",
