@@ -1,53 +1,15 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import Image from "next/image"
-import { Github, ExternalLink } from "lucide-react"
-import { Badge } from "@/components/ui/base/badge"
-import { Button } from "@/components/ui/base/button"
-import { Card, CardContent } from "@/components/ui/base/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/base/tabs"
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Github, ExternalLink } from 'lucide-react';
+import { Badge } from '@/components/ui/base/badge';
+import { Button } from '@/components/ui/base/button';
+import { Card, CardContent } from '@/components/ui/base/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/base/tabs';
 
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-    image: "/placeholder.svg?height=300&width=400&text=E-Commerce+Platform",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/johndoe/ecommerce-platform",
-    demo: "https://ecommerce-demo.johndoe.dev",
-    featured: true,
-  },
-  {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team collaboration features.",
-    image: "/placeholder.svg?height=300&width=400&text=Task+Manager",
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    github: "https://github.com/johndoe/task-manager",
-    demo: "https://tasks.johndoe.dev",
-    featured: true,
-  },
-  {
-    title: "Weather Dashboard",
-    description: "A responsive weather dashboard with location-based forecasts and interactive charts.",
-    image: "/placeholder.svg?height=300&width=400&text=Weather+Dashboard",
-    technologies: ["Vue.js", "Chart.js", "OpenWeather API"],
-    github: "https://github.com/johndoe/weather-dashboard",
-    demo: "https://weather.johndoe.dev",
-    featured: false,
-  },
-  {
-    title: "Portfolio Website",
-    description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS.",
-    image: "/placeholder.svg?height=300&width=400&text=Portfolio+Site",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/johndoe/portfolio",
-    demo: "https://loney.dev",
-    featured: false,
-  },
-]
+import { projects } from '@/data/projects';
 
 export function ProjectsSection() {
   return (
@@ -97,7 +59,7 @@ export function ProjectsSection() {
                     <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm transition-all hover:shadow-lg group">
                       <div className="relative overflow-hidden">
                         <Image
-                          src={project.image || "/placeholder.svg"}
+                          src={project.image || '/placeholder.svg'}
                           alt={project.title}
                           width={400}
                           height={300}
@@ -148,7 +110,7 @@ export function ProjectsSection() {
                   <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm transition-all hover:shadow-lg group h-full">
                     <div className="relative overflow-hidden">
                       <Image
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image || '/placeholder.svg'}
                         alt={project.title}
                         width={400}
                         height={200}
@@ -169,7 +131,9 @@ export function ProjectsSection() {
                     </div>
                     <CardContent className="p-4 flex flex-col h-full">
                       <h3 className="font-bold mb-2">{project.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4 grow">{project.description}</p>
+                      <p className="text-sm text-muted-foreground mb-4 grow">
+                        {project.description}
+                      </p>
                       <div className="flex flex-wrap gap-1">
                         {project.technologies.slice(0, 3).map((tech) => (
                           <Badge key={tech} variant="secondary" className="rounded-full text-xs">
@@ -191,5 +155,5 @@ export function ProjectsSection() {
         </Tabs>
       </div>
     </section>
-  )
+  );
 }

@@ -3,16 +3,17 @@
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/base/badge';
 
-const skills = [
+const codeSkills = [
   { name: 'JavaScript', level: 90 },
-  { name: 'React', level: 85 },
-  { name: 'Next.js', level: 80 },
-  { name: 'Svelet', level: 80 },
-  { name: 'Java', level: 75 },
-  { name: 'Spring Boot', level: 85 },
+  { name: 'React / Next.js', level: 80 },
+  { name: 'SveletKit', level: 60 },
+  { name: 'Java', level: 83 },
+  { name: 'Spring Boot', level: 87 },
+  { name: 'Flutter', level: 65 },
   { name: 'Dart', level: 80 },
-  { name: 'Flutter', level: 60 },
 ];
+
+const softSkills = ['Problem Solving', 'Team Skills', 'Agile Development', 'Quick learner'];
 
 export function AboutSection() {
   return (
@@ -54,24 +55,28 @@ export function AboutSection() {
                 creative solutions.
               </p>
               <p>
-                Since then, I have attended university and launched a startup while studying, gaining
-                experience in developing robust, real-world systems that scale with both technology
-                and teams.
+                Since then, I have attended university and launched a startup while studying,
+                gaining experience in developing robust, real-world systems that scale with both
+                technology and teams.
               </p>
               <p>
                 I believe in writing clean, maintainable code and staying up-to-date with the latest
                 technologies and best practices. When I'm not working, you can find me learning new
                 technologies or doing my best not to lose my online games.
               </p>
+              <p>
+                I believe my key talent is the ability to quickly pick up nearly any project.
+                Whether it's an existing code base of the finest spaghetti or new blazing fast
+                tech-stack, I'm can quickly start understanding the core of the project and begin
+                finding issues, improvement and start contributing.
+              </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['Problem Solving', 'Team Skills', 'Agile Development', 'Code Review'].map(
-                (trait) => (
-                  <Badge key={trait} variant="secondary" className="rounded-full">
-                    {trait}
-                  </Badge>
-                )
-              )}
+              {softSkills.map((trait) => (
+                <Badge key={trait} variant="secondary" className="rounded-full">
+                  {trait}
+                </Badge>
+              ))}
             </div>
           </motion.div>
 
@@ -83,7 +88,7 @@ export function AboutSection() {
           >
             <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
             <div className="space-y-4">
-              {skills.map((skill) => (
+              {codeSkills.map((skill) => (
                 <div key={skill.name}>
                   <div className="flex justify-between mb-2">
                     <span className="font-medium">{skill.name}</span>
