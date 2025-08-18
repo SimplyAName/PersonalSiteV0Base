@@ -49,7 +49,9 @@ export function ExperienceSection() {
                       <div className="flex flex-col md:items-end text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <Calendar className="size-4" />
-                          <span>{exp.period}</span>
+                          <span>
+                            {exp.startDate} - {exp.endDate}
+                          </span>
                         </div>
                         <div className="flex items-center gap-1">
                           <MapPin className="size-4" />
