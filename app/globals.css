@@ -92,9 +92,9 @@
   :root {
     --background: 0 0% 90%;
     --foreground: 240 10% 3.9%;
-    --card: 0 0% 90%;
+    --card: 0 0% 80%;
     --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 90%;
+    --popover: 0 0% 80%;
     --popover-foreground: 240 10% 3.9%;
     --primary: 221 83% 53%;
     --primary-foreground: 0 0% 98%;
