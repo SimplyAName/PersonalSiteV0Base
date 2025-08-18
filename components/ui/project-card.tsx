@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ExternalLink, Github } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, ChevronDown } from 'lucide-react';
 import { Badge } from '@/components/ui/base/badge';
 import { Button } from '@/components/ui/base/button';
 import { Card, CardContent } from '@/components/ui/base/card';
@@ -15,9 +17,13 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) {
   const isCompact = variant === 'compact';
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm transition-all hover:shadow-lg group h-full">
+    <Card
+      className={`overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm transition-all hover:shadow-lg group h-full ${isCompact ? 'cursor-pointer' : ''}`}
+      onClick={() => isCompact && setIsExpanded(!isExpanded)}
+    >
       <div className="relative overflow-hidden">
         <Image
           src={project.image || '/placeholder.svg'}
@@ -64,9 +70,41 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
             )}
           </div>
         </div>
-        <p className={`${isCompact ? 'text-sm' : 'text-base'} text-muted-foreground mb-4 grow`}>
-          {project.description}
-        </p>
+        {isCompact ? (
+          <div className="mb-4 grow overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={isExpanded ? 'description' : 'subtitle'}
+                initial={{ opacity: 0, y: isExpanded ? 20 : -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: isExpanded ? -20 : 20 }}
+                transition={{ duration: 0.2 }}
+              >
+                <p className="text-sm text-muted-foreground">
+                  {isExpanded ? project.description : project.subtitle}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+            <button
+              className="mt-2 text-xs text-primary flex items-center hover:underline"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsExpanded(!isExpanded);
+              }}
+            >
+              {isExpanded ? 'Show less' : 'Read more'}
+              <motion.div
+                initial={false}
+                animate={{ rotate: isExpanded ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="ml-1 h-3 w-3" />
+              </motion.div>
+            </button>
+          </div>
+        ) : (
+          <p className="text-base text-muted-foreground mb-4 grow">{project.description}</p>
+        )}
         <div className="flex flex-wrap gap-1">
           {(isCompact ? project.technologies.slice(0, 3) : project.technologies).map((tech) => (
             <Badge key={tech} variant="secondary" className="rounded-full text-xs">
