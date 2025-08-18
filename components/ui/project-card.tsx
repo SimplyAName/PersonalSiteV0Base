@@ -71,7 +71,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
           </div>
         </div>
         {isCompact ? (
-          <div className="mb-4 grow">
+          <div className="mb-4">
             <div className="overflow-hidden">
               <p className="text-sm text-muted-foreground font-medium">{project.subtitle}</p>
               <div
@@ -100,7 +100,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
             </button>
           </div>
         ) : (
-          <p className="text-base text-muted-foreground mb-4 grow">{project.description}</p>
+          <p className="text-base text-muted-foreground mb-4">{project.description}</p>
         )}
         <div className="flex flex-wrap gap-1">
           {(isCompact ? project.technologies.slice(0, 3) : project.technologies).map((tech) => (
