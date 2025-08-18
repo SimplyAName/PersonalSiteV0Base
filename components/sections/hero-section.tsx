@@ -42,7 +42,7 @@ export function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="rounded-full h-12 px-8 text-base" asChild>
-                <Link href="#projects" className="flex items-center">
+                <Link href="#projects" className="flex items-center" scroll={true}>
                   View My Work
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
@@ -52,7 +52,9 @@ export function HeroSection() {
                 variant="outline"
                 className="rounded-full h-12 px-8 text-base bg-transparent"
               >
-                <Link href="#contact">Get In Touch</Link>
+                <Link href="#contact" scroll={true}>
+                  Get In Touch
+                </Link>
               </Button>
             </div>
             <SocialLinks />

@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Menu, X, Moon, Sun, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui/base/button';
-import { useTheme } from 'next-themes';
-import { Logo } from '@/components/ui/personal-logo';
+import { ThemeToggle } from '@/components/ui/base/theme-toggle';
+import { PersonalLogo } from '@/components/ui/personal-logo';
 
 interface HeaderProps {
   activeSection: string;
@@ -14,11 +14,6 @@ interface HeaderProps {
 
 export function Header({ activeSection }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const highlightActiveSection = (section: string) => {
     return activeSection === section
@@ -31,7 +26,7 @@ export function Header({ activeSection }: HeaderProps) {
       className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-background/80 shadow-xs`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Logo size={8} />
+        <PersonalLogo size={8} />
         <nav className="hidden md:flex gap-8">
           <Link
             href="#about"
@@ -67,19 +62,14 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
         </nav>
         <div className="hidden md:flex gap-4 items-center">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {theme === 'dark' ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+          <ThemeToggle />
           <Button className="rounded-full">
             Download CV
             <Download className="ml-1 size-4" />
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {theme === 'dark' ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-          </Button>
+          <ThemeToggle />
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             <span className="sr-only">Toggle menu</span>
