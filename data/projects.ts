@@ -52,7 +52,7 @@ export const projects: Project[] = [
   },
   {
     title: "GAIN",
-    subtitle: "",
+    subtitle: "Social Discount platform with a website, IOS and Android app built by myself",
     description: "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
     image: "/placeholder.svg?height=300&width=400&text=GAIN",
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
