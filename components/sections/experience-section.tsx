@@ -61,7 +61,9 @@ export function ExperienceSection() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <p className="text-muted-foreground mb-4 whitespace-pre-wrap">
+                      {exp.description}
+                    </p>
                     <div>
                       <h4 className="font-medium mb-2">Key Achievements:</h4>
                       <ul className="space-y-1">
