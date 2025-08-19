@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/base/button';
 import { Badge } from '@/components/ui/base/badge';
 import { SocialLinks } from '../ui/social-links';
+import { scrollToSection } from '@/lib/utils';
 
 export function HeroSection() {
   return (
@@ -36,12 +37,19 @@ export function HeroSection() {
               Full Stack Developer & Software Engineer
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              Writing robust, scaleable applications through clean code practices and innovative
-              solutions for over 5 years.
+              Writing robust, scaleable applications using clean code, agile development and
+              innovative solutions for over 5 years.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="rounded-full h-12 px-8 text-base" asChild>
-                <Link href="#projects" className="flex items-center" scroll={true}>
+                <Link
+                  href="#projects"
+                  className="flex items-center"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('projects');
+                  }}
+                >
                   View My Work
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
@@ -51,7 +59,13 @@ export function HeroSection() {
                 variant="outline"
                 className="rounded-full h-12 px-8 text-base bg-transparent"
               >
-                <Link href="#contact" scroll={true}>
+                <Link
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contact');
+                  }}
+                >
                   Get In Touch
                 </Link>
               </Button>
