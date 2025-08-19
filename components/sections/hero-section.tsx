@@ -37,8 +37,8 @@ export function HeroSection() {
               Full Stack Developer & Software Engineer
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              Writing robust, scaleable applications using clean code, agile development and
-              innovative solutions for over 5 years.
+              Been writing robust software with clean code, agile development practices for over 5
+              years. Passionate about technology since forever
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="rounded-full h-12 px-8 text-base" asChild>
