@@ -65,10 +65,10 @@ export function AboutSection() {
                 technologies or doing my best not to lose my online games.
               </p>
               <p>
-                I believe my key talent is the ability to quickly pick up nearly any project.
-                Whether it's an existing code base of the finest spaghetti or new blazing fast
-                tech-stack, I'm can quickly start understanding the core of the project and begin
-                finding issues, improvement and start contributing.
+                My key talent is the ability to quickly pick up nearly any project. Whether it's an
+                existing code base of the finest spaghetti or new blazing fast tech-stack, I'm can
+                quickly start understanding the core of the project and begin finding issues,
+                improvement and start contributing.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
