@@ -6,9 +6,8 @@ import Link from 'next/link';
 import { ExternalLink, Github, ChevronDown } from 'lucide-react';
 import { Badge } from '@/components/ui/base/badge';
 import { Button } from '@/components/ui/base/button';
-import { Card, CardContent } from '@/components/ui/base/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/base/card';
 import type { Project } from '@/data/projects';
-import { motion } from 'framer-motion';
 
 interface ProjectCardProps {
   project: Project;
@@ -21,7 +20,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
 
   return (
     <Card
-      className={`overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm hover:shadow-lg group h-full ${isCompact ? 'cursor-pointer' : ''}`}
+      className={`overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm hover:shadow-lg group h-full ${isCompact ? 'cursor-pointer' : ''} flex flex-col h-full`}
       onClick={() => isCompact && setIsExpanded(!isExpanded)}
     >
       <div className="relative overflow-hidden">
@@ -51,23 +50,40 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
           )}
         </div>
       </div>
-      <CardContent className={`${isCompact ? 'p-4' : 'p-6'} flex flex-col h-full`}>
+      <CardContent className={`${isCompact ? 'p-4' : 'p-6'} flex flex-col grow`}>
         <div className="flex items-center gap-2 mb-2">
           <h3 className={`${isCompact ? 'text-base' : 'text-xl'} font-bold`}>{project.title}</h3>
           <div className="flex items-center gap-2">
-            <span className={`relative flex h-2 w-2 ${isCompact ? 'scale-75' : ''}`}>
-              <span
-                className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${project.demo ? 'bg-green-400' : 'bg-red-400'}`}
-              ></span>
-              <span
-                className={`relative inline-flex rounded-full h-2 w-2 ${project.demo ? 'bg-green-500' : 'bg-red-500'}`}
-              ></span>
-            </span>
-            {!isCompact && (
-              <span className="text-xs text-muted-foreground">
-                {project.demo ? 'Available' : 'Unavailable'}
+            {/* Project status indicator */}
+            <div className="flex items-center gap-2">
+              <span className={`relative flex h-2 w-2`}>
+                <span
+                  className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                    project.status === 'in-progress'
+                      ? 'bg-yellow-400'
+                      : project.demo
+                        ? 'bg-green-400'
+                        : 'bg-red-400'
+                  }`}
+                ></span>
+                <span
+                  className={`relative inline-flex rounded-full h-2 w-2 ${
+                    project.status === 'in-progress'
+                      ? 'bg-yellow-500'
+                      : project.demo
+                        ? 'bg-green-500'
+                        : 'bg-red-500'
+                  }`}
+                ></span>
               </span>
-            )}
+              <span className={`text-xs text-muted-foreground`}>
+                {project.status === 'in-progress'
+                  ? 'In Progress'
+                  : project.demo
+                    ? 'Available'
+                    : 'Unavailable'}
+              </span>
+            </div>
           </div>
         </div>
         {isCompact ? (
@@ -90,31 +106,31 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
               }}
             >
               {isExpanded ? 'Show less' : 'Read more'}
-              <motion.div
-                initial={false}
-                animate={{ rotate: isExpanded ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
+              <div
+                className={`transition-all duration-200 ease-in-out ${isExpanded ? 'rotate-180' : 'rotate-0'}`}
               >
                 <ChevronDown />
-              </motion.div>
+              </div>
             </button>
           </div>
         ) : (
           <p className="text-base text-muted-foreground mb-4">{project.description}</p>
         )}
+      </CardContent>
+      <CardFooter>
         <div className="flex flex-wrap gap-1">
           {(isCompact ? project.technologies.slice(0, 3) : project.technologies).map((tech) => (
             <Badge key={tech} variant="secondary" className="rounded-full text-xs">
               {tech}
             </Badge>
           ))}
-          {isCompact && project.technologies.length > 3 && (
+          {project.technologies.length > 3 && (
             <Badge variant="secondary" className="rounded-full text-xs">
               +{project.technologies.length - 3}
             </Badge>
           )}
         </div>
-      </CardContent>
+      </CardFooter>
     </Card>
   );
 }

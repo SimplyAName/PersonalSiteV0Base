@@ -10,6 +10,7 @@ export type Project = {
   codebase?: string;
   demo?: string;
   featured: boolean;
+  status?: 'completed' | 'in-progress';
 };
 
 /**
@@ -48,7 +49,15 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "AI tooling"],
     codebase: "https://github.com/SimplyAName/PersonalSiteV0Base",
     demo: "https://loney.dev",
+    featured: false,
+  },{
+    title: "Gun Of Many Card",
+    subtitle: "Rouge-like PvP battles, built with Godot",
+    description: "Play round after round until on hits the score limit. Every loss the loser picks cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!",
+    image: "/placeholder.svg?height=300&width=400&text=GAIN",
+    technologies: ["Godot", "GDScript", "Blender"],
     featured: true,
+    status: "in-progress"
   },
   {
     title: "GAIN",
@@ -56,13 +65,6 @@ export const projects: Project[] = [
     description: "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
     image: "/placeholder.svg?height=300&width=400&text=GAIN",
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
-    featured: false,
-  },{
-    title: "Gun Of Many Card (WIP)",
-    subtitle: "Rouge-like PvP battles, built with Godot",
-    description: "Play round after round until on hits the score limit. Every loss the loser gets stronger, picking a card to upgrade their character with a Fire Flower, Bullet speed, increased HP etc",
-    image: "/placeholder.svg?height=300&width=400&text=GAIN",
-    technologies: ["Godot", "GDScript", "Blender"],
     featured: false,
   },
 ]
