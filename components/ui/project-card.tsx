@@ -87,7 +87,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
           </div>
         </div>
         {isCompact ? (
-          <div className="mb-4">
+          <>
             <div className="overflow-hidden">
               <p className="text-sm text-muted-foreground font-medium">{project.subtitle}</p>
               <div
@@ -95,7 +95,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
                   isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-sm text-muted-foreground mt-2">{project.description}</p>
+                <p className="text-sm pt-2">{project.description}</p>
               </div>
             </div>
             <button
@@ -112,12 +112,12 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
                 <ChevronDown />
               </div>
             </button>
-          </div>
+          </>
         ) : (
-          <p className="text-base text-muted-foreground mb-4">{project.description}</p>
+          <p className="text-base text-muted-foreground">{project.description}</p>
         )}
       </CardContent>
-      <CardFooter>
+      <CardFooter className="px-4">
         <div className="flex flex-wrap gap-1">
           {(isCompact ? project.technologies.slice(0, 3) : project.technologies).map((tech) => (
             <Badge key={tech} variant="secondary" className="rounded-full text-xs">
