@@ -20,7 +20,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
 
   return (
     <Card
-      className={`overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm hover:shadow-lg group h-full ${isCompact ? 'cursor-pointer' : ''} flex flex-col h-full`}
+      className={`overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm hover:shadow-lg group h-full ${isCompact ? 'cursor-pointer' : ''} flex flex-col`}
       onClick={() => isCompact && setIsExpanded(!isExpanded)}
     >
       <div className="relative overflow-hidden">
@@ -50,13 +50,13 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
           )}
         </div>
       </div>
-      <CardContent className={`${isCompact ? 'p-4' : 'p-6'} flex flex-col grow`}>
+      <CardContent className="flex flex-col grow pt-4">
         <div className="flex items-center gap-2 mb-2">
           <h3 className={`${isCompact ? 'text-base' : 'text-xl'} font-bold`}>{project.title}</h3>
           <div className="flex items-center gap-2">
             {/* Project status indicator */}
             <div className="flex items-center gap-2">
-              <span className={`relative flex h-2 w-2`}>
+              <span className="relative flex h-2 w-2">
                 <span
                   className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
                     project.status === 'in-progress'
@@ -117,7 +117,7 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
           <p className="text-base text-muted-foreground">{project.description}</p>
         )}
       </CardContent>
-      <CardFooter className="px-4">
+      <CardFooter>
         <div className="flex flex-wrap gap-1">
           {(isCompact ? project.technologies.slice(0, 3) : project.technologies).map((tech) => (
             <Badge key={tech} variant="secondary" className="rounded-full text-xs">
