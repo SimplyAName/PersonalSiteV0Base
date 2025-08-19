@@ -67,4 +67,12 @@ export const projects: Project[] = [
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
     featured: false,
   },
+  {
+    title: "Other",
+    subtitle: "Should I include projects from work?",
+    description: "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
+    image: "/placeholder.svg?height=300&width=400&text=GAIN",
+    technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
+    featured: false,
+  },
 ]
