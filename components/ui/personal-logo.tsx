@@ -2,7 +2,7 @@ interface LogoProps {
   size?: number;
 }
 
-export function Logo({ size = 8 }: LogoProps) {
+export function PersonalLogo({ size = 8 }: LogoProps) {
   return (
     <div className="flex items-center gap-2 font-bold">
       <div

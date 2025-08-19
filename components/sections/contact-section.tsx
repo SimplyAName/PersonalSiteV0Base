@@ -38,7 +38,7 @@ export function ContactSection() {
               className="rounded-full h-12 px-8 text-base"
               asChild
             >
-              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
+              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} target='_blank'>
                 <Mail className="mr-2 size-4" />
                 Send Email
               </Link>

@@ -1,51 +1,10 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { Check, Calendar, MapPin } from "lucide-react"
-import { Badge } from "@/components/ui/base/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/base/card"
-
-const experiences = [
-  {
-    title: "Senior Software Engineer",
-    company: "Tech Solutions Inc.",
-    period: "2022 - Present",
-    location: "San Francisco, CA",
-    description:
-      "Led development of scalable web applications using React and Node.js. Mentored junior developers and implemented CI/CD pipelines.",
-    achievements: [
-      "Increased application performance by 40%",
-      "Led a team of 5 developers",
-      "Implemented automated testing reducing bugs by 60%",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    period: "2020 - 2022",
-    location: "Remote",
-    description:
-      "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces.",
-    achievements: [
-      "Built 15+ client projects from scratch",
-      "Reduced development time by 30% through reusable components",
-      "Improved user engagement by 25%",
-    ],
-  },
-  {
-    title: "Junior Developer",
-    company: "Digital Agency Co.",
-    period: "2019 - 2020",
-    location: "New York, NY",
-    description:
-      "Assisted in developing responsive websites and web applications. Gained experience in various frameworks and databases.",
-    achievements: [
-      "Contributed to 20+ successful projects",
-      "Learned 5 new programming languages",
-      "Received 'Rising Star' award",
-    ],
-  },
-]
+import { motion } from 'framer-motion';
+import { Check, Calendar, MapPin } from 'lucide-react';
+import { Badge } from '@/components/ui/base/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/base/card';
+import { experiences } from '@/data/experiences';
 
 export function ExperienceSection() {
   return (
@@ -78,7 +37,7 @@ export function ExperienceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative flex ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                className={`relative flex ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 <Card className="overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm md:w-3/4">
                   <CardHeader>
@@ -90,7 +49,9 @@ export function ExperienceSection() {
                       <div className="flex flex-col md:items-end text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <Calendar className="size-4" />
-                          <span>{exp.period}</span>
+                          <span>
+                            {exp.startDate} - {exp.endDate}
+                          </span>
                         </div>
                         <div className="flex items-center gap-1">
                           <MapPin className="size-4" />
@@ -100,12 +61,17 @@ export function ExperienceSection() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <p className="text-muted-foreground mb-4 whitespace-pre-wrap">
+                      {exp.description}
+                    </p>
                     <div>
                       <h4 className="font-medium mb-2">Key Achievements:</h4>
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <li
+                            key={j}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
                             <Check className="size-4 text-primary mt-0.5 shrink-0" />
                             <span>{achievement}</span>
                           </li>
@@ -120,5 +86,5 @@ export function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

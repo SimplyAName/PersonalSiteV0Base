@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Menu, X, Moon, Sun, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui/base/button';
-import { useTheme } from 'next-themes';
-import { Logo } from '@/components/ui/personal-logo';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { PersonalLogo } from '@/components/ui/personal-logo';
+import { scrollToSection } from '@/lib/utils';
 
 interface HeaderProps {
   activeSection: string;
@@ -14,11 +15,6 @@ interface HeaderProps {
 
 export function Header({ activeSection }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const highlightActiveSection = (section: string) => {
     return activeSection === section
@@ -26,15 +22,25 @@ export function Header({ activeSection }: HeaderProps) {
       : 'text-muted-foreground';
   };
 
+  const handleScroll = (sectionId: string, event: React.MouseEvent) => {
+    event.preventDefault();
+    scrollToSection(sectionId, {
+      onComplete: () => setMobileMenuOpen(false),
+    });
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-background/80 shadow-xs`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Logo size={8} />
+        <Link href="#hero" onClick={(e) => handleScroll('hero', e)}>
+          <PersonalLogo size={8} />
+        </Link>
         <nav className="hidden md:flex gap-8">
           <Link
             href="#about"
+            onClick={(e) => handleScroll('about', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'about'
             )}`}
@@ -43,6 +49,7 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
           <Link
             href="#experience"
+            onClick={(e) => handleScroll('experience', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'experience'
             )}`}
@@ -51,6 +58,7 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
           <Link
             href="#projects"
+            onClick={(e) => handleScroll('projects', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'projects'
             )}`}
@@ -59,6 +67,7 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
           <Link
             href="#contact"
+            onClick={(e) => handleScroll('contact', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'contact'
             )}`}
@@ -67,19 +76,14 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
         </nav>
         <div className="hidden md:flex gap-4 items-center">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {theme === 'dark' ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+          <ThemeToggle />
           <Button className="rounded-full">
             Download CV
             <Download className="ml-1 size-4" />
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {theme === 'dark' ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-          </Button>
+          <ThemeToggle />
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             <span className="sr-only">Toggle menu</span>
@@ -102,7 +106,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('about', e)}
             >
               About
             </Link>
@@ -113,7 +117,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('experience', e)}
             >
               Experience
             </Link>
@@ -124,7 +128,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('projects', e)}
             >
               Projects
             </Link>
@@ -135,7 +139,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('contact', e)}
             >
               Contact
             </Link>

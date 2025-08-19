@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Logo } from '@/components/ui/personal-logo';
+import { PersonalLogo } from '@/components/ui/personal-logo';
+import { scrollToSection } from '@/lib/utils';
 
 interface FooterProps {
   activeSection: string;
@@ -13,10 +14,14 @@ export function Footer({ activeSection }: FooterProps) {
       <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_110%)]"></div>
       <div className="container flex flex-col gap-4 px-4 py-8 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <Logo size={8} />
+          <PersonalLogo size={8} />
           <div className="flex gap-4">
             <Link
               href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('about');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'about' ? 'text-foreground font-medium' : 'text-muted-foreground'
               }`}
@@ -25,6 +30,10 @@ export function Footer({ activeSection }: FooterProps) {
             </Link>
             <Link
               href="#experience"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('experience');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'experience'
                   ? 'text-foreground font-medium'
@@ -35,6 +44,10 @@ export function Footer({ activeSection }: FooterProps) {
             </Link>
             <Link
               href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('projects');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'projects'
                   ? 'text-foreground font-medium'
@@ -45,6 +58,10 @@ export function Footer({ activeSection }: FooterProps) {
             </Link>
             <Link
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'contact'
                   ? 'text-foreground font-medium'

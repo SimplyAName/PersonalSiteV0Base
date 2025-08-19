@@ -20,6 +20,7 @@ export function SocialLinks({
       <Link
         href="https://github.com/SimplyAName"
         className={`${baseColor} hover:${hoverColor} transition-colors`}
+        target="_blank"
       >
         <Github className={`size-${size}`} />
         <span className="sr-only">GitHub</span>
@@ -27,6 +28,7 @@ export function SocialLinks({
       <Link
         href="https://www.linkedin.com/in/michael-loney-314634174/"
         className={`${baseColor} hover:${hoverColor} transition-colors`}
+        target="_blank"
       >
         <Linkedin className={`size-${size}`} />
         <span className="sr-only">LinkedIn</span>
@@ -34,6 +36,7 @@ export function SocialLinks({
       <Link
         href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
         className={`${baseColor} hover:${hoverColor} transition-colors`}
+        target="_blank"
       >
         <Mail className={`size-${size}`} />
         <span className="sr-only">Email</span>
