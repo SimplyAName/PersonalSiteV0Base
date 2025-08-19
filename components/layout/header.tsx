@@ -75,7 +75,7 @@ export function Header({ activeSection }: HeaderProps) {
             Contact
           </Link>
         </nav>
-        <div className="hidden md:flex gap-4 items-center">
+        <div className="hidden md:block">
           <ThemeToggle />
         </div>
         <div className="flex items-center gap-4 md:hidden">
