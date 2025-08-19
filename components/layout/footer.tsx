@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { PersonalLogo } from '@/components/ui/personal-logo';
+import { scrollToSection } from '@/lib/utils';
 
 interface FooterProps {
   activeSection: string;
@@ -17,6 +18,10 @@ export function Footer({ activeSection }: FooterProps) {
           <div className="flex gap-4">
             <Link
               href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('about');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'about' ? 'text-foreground font-medium' : 'text-muted-foreground'
               }`}
@@ -25,6 +30,10 @@ export function Footer({ activeSection }: FooterProps) {
             </Link>
             <Link
               href="#experience"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('experience');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'experience'
                   ? 'text-foreground font-medium'
@@ -35,6 +44,10 @@ export function Footer({ activeSection }: FooterProps) {
             </Link>
             <Link
               href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('projects');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'projects'
                   ? 'text-foreground font-medium'
@@ -45,6 +58,10 @@ export function Footer({ activeSection }: FooterProps) {
             </Link>
             <Link
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
               className={`text-sm transition-colors hover:text-foreground ${
                 activeSection === 'contact'
                   ? 'text-foreground font-medium'

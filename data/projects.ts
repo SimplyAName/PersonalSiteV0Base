@@ -51,7 +51,7 @@ export const projects: Project[] = [
     demo: "https://loney.dev",
     featured: false,
   },{
-    title: "Gun Of Many Card",
+    title: "Gun Wizards",
     subtitle: "Rouge-like PvP battles, built with Godot",
     description: "Play round after round until on hits the score limit. Every loss the loser picks cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!",
     image: "/placeholder.svg?height=300&width=400&text=GAIN",

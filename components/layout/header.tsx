@@ -7,6 +7,7 @@ import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui/base/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { PersonalLogo } from '@/components/ui/personal-logo';
+import { scrollToSection } from '@/lib/utils';
 
 interface HeaderProps {
   activeSection: string;
@@ -21,15 +22,25 @@ export function Header({ activeSection }: HeaderProps) {
       : 'text-muted-foreground';
   };
 
+  const handleScroll = (sectionId: string, event: React.MouseEvent) => {
+    event.preventDefault();
+    scrollToSection(sectionId, {
+      onComplete: () => setMobileMenuOpen(false),
+    });
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-background/80 shadow-xs`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <PersonalLogo size={8} />
+        <Link href="#hero" onClick={(e) => handleScroll('hero', e)}>
+          <PersonalLogo size={8} />
+        </Link>
         <nav className="hidden md:flex gap-8">
           <Link
             href="#about"
+            onClick={(e) => handleScroll('about', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'about'
             )}`}
@@ -38,6 +49,7 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
           <Link
             href="#experience"
+            onClick={(e) => handleScroll('experience', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'experience'
             )}`}
@@ -46,6 +58,7 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
           <Link
             href="#projects"
+            onClick={(e) => handleScroll('projects', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'projects'
             )}`}
@@ -54,6 +67,7 @@ export function Header({ activeSection }: HeaderProps) {
           </Link>
           <Link
             href="#contact"
+            onClick={(e) => handleScroll('contact', e)}
             className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
               'contact'
             )}`}
@@ -92,7 +106,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('about', e)}
             >
               About
             </Link>
@@ -103,7 +117,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('experience', e)}
             >
               Experience
             </Link>
@@ -114,7 +128,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('projects', e)}
             >
               Projects
             </Link>
@@ -125,7 +139,7 @@ export function Header({ activeSection }: HeaderProps) {
                   ? 'text-primary font-semibold border-l-2 border-primary pl-2'
                   : 'text-foreground hover:text-primary'
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleScroll('contact', e)}
             >
               Contact
             </Link>
