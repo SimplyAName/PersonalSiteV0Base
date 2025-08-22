@@ -31,48 +31,53 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
-    title: "Pals Vs Pokemon",
-    subtitle: "Pal or Pokemon? Find out before Nintendo lawyers",
+    title: 'Pals Vs Pokemon',
+    subtitle: 'Pal or Pokemon? Find out before Nintendo lawyers',
     description:
-      "Pals Vs Pokemon is a little game created using SvelteKit. It is design to be popped up by anyone using Docker and Liquibase",
-    image: "/placeholder.svg?height=300&width=400&text=E-Commerce+Platform",
-    technologies: ["SvelteKit", "Liquibase", "Prisma", "Tailwind"],
-    codebase: "https://github.com/SimplyAName/PalVsPokemon",
-    demo: "https://www.palsvspokemon.com/",
+      'Pals Vs Pokemon is a little game created using SvelteKit. It is design to be popped up by anyone using Docker and Liquibase',
+    image: '/assets/projects/PalsVsPokemon/PVP Game banner.png',
+    technologies: ['SvelteKit', 'Liquibase', 'Prisma', 'Tailwind'],
+    codebase: 'https://github.com/SimplyAName/PalVsPokemon',
+    demo: 'https://www.palsvspokemon.com/',
     featured: true,
   },
   {
-    title: "Portfolio Website",
-    subtitle: "Personal website you are looking at right now!",
-    description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools",
-    image: "/placeholder.svg?height=300&width=400&text=Portfolio+Site",
-    technologies: ["Next.js", "Tailwind CSS", "AI tooling"],
-    codebase: "https://github.com/SimplyAName/PersonalSiteV0Base",
-    demo: "https://loney.dev",
+    title: 'Portfolio Website',
+    subtitle: 'Personal website you are looking at right now!',
+    description:
+      'A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools',
+    image: '/placeholder.svg?height=300&width=400&text=Portfolio+Site',
+    technologies: ['Next.js', 'Tailwind CSS', 'AI tooling'],
+    codebase: 'https://github.com/SimplyAName/PersonalSiteV0Base',
+    demo: 'https://loney.dev',
     featured: false,
-  },{
-    title: "Gun Wizards",
-    subtitle: "Rouge-like PvP battles, built with Godot",
-    description: "Play round after round until on hits the score limit. Every loss the loser picks cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!",
-    image: "/placeholder.svg?height=300&width=400&text=GAIN",
-    technologies: ["Godot", "GDScript", "Blender"],
+  },
+  {
+    title: 'Gun Wizards',
+    subtitle: 'Rouge-like PvP battles, built with Godot',
+    description:
+      'Play round after round until on hits the score limit. Every loss the loser picks cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!',
+    image: '/assets/projects/WizardingGunsmiths/Wizarding_Gunsmiths_ai_wip_banner.png',
+    technologies: ['Godot', 'GDScript', 'Blender'],
     featured: true,
-    status: "in-progress"
+    status: 'in-progress',
   },
   {
-    title: "GAIN",
-    subtitle: "Social Discount platform with a website, IOS and Android app built by myself",
-    description: "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
-    image: "/placeholder.svg?height=300&width=400&text=GAIN",
-    technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
+    title: 'GAIN',
+    subtitle: 'Social Discount platform with a website, IOS and Android app built by myself',
+    description:
+      'My own social discount platform with a website and mobile apps in both stores. Closed down during COVID',
+    image: '/placeholder.svg?height=300&width=400&text=GAIN',
+    technologies: ['Laravel', 'Flutter', 'IOS', 'Android', 'AWS'],
     featured: false,
   },
   {
-    title: "Other",
-    subtitle: "Should I include projects from work?",
-    description: "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
-    image: "/placeholder.svg?height=300&width=400&text=GAIN",
-    technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS",],
+    title: 'Other',
+    subtitle: 'Should I include projects from work?',
+    description:
+      'My own social discount platform with a website and mobile apps in both stores. Closed down during COVID',
+    image: '/placeholder.svg?height=300&width=400&text=GAIN',
+    technologies: ['Laravel', 'Flutter', 'IOS', 'Android', 'AWS'],
     featured: false,
   },
-]
+];
