@@ -46,7 +46,7 @@ export const projects: Project[] = [
     subtitle: 'Personal website you are looking at right now!',
     description:
       'A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools',
-    image: '/placeholder.svg?height=300&width=400&text=Portfolio+Site',
+    image: '/assets/projects/PersonalSite/personal_site.png',
     technologies: ['Next.js', 'Tailwind CSS', 'AI tooling'],
     codebase: 'https://github.com/SimplyAName/PersonalSiteV0Base',
     demo: 'https://loney.dev',
