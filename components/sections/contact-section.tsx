@@ -38,7 +38,7 @@ export function ContactSection() {
               className="rounded-full h-12 px-8 text-base"
               asChild
             >
-              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} target='_blank'>
+              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} target="_blank">
                 <Mail className="mr-2 size-4" />
                 Send Email
               </Link>
@@ -47,9 +47,12 @@ export function ContactSection() {
               size="lg"
               variant="outline"
               className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
+              asChild
             >
-              <Download className="mr-2 size-4" />
-              Download CV
+              <a href="/cv.pdf" download>
+                <Download className="mr-2 size-4" />
+                Download CV
+              </a>
             </Button>
           </div>
           <SocialLinks

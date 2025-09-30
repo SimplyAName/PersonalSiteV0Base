@@ -139,12 +139,6 @@ export function Header({ activeSection }: HeaderProps) {
             >
               Contact
             </Link>
-            <div className="flex flex-col gap-2 pt-2 border-t">
-              <Button className="rounded-full">
-                Download CV
-                <Download className="ml-1 size-4" />
-              </Button>
-            </div>
           </div>
         </motion.div>
       )}

@@ -50,15 +50,11 @@ export function HeroSection() {
                     scrollToSection('projects');
                   }}
                 >
-                  View My Work
+                  <b>View My Work</b>
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full h-12 px-8 text-base bg-transparent"
-              >
+              <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
                 <Link
                   href="#contact"
                   onClick={(e) => {
@@ -66,7 +62,7 @@ export function HeroSection() {
                     scrollToSection('contact');
                   }}
                 >
-                  Get In Touch
+                  <b>Get In Touch</b>
                 </Link>
               </Button>
             </div>
