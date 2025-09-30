@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/base/button';
 import { Badge } from '@/components/ui/base/badge';
 import { SocialLinks } from '../ui/social-links';
+import { scrollToSection } from '@/lib/utils';
 
 export function HeroSection() {
   return (
@@ -36,23 +37,32 @@ export function HeroSection() {
               Full Stack Developer & Software Engineer
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              Writing robust, scaleable applications through clean code practices and innovative
-              solutions for over 5 years.
+              Been writing robust software with clean code, agile development practices for over 5
+              years. Passionate about technology since forever
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="rounded-full h-12 px-8 text-base" asChild>
-                <Link href="#projects" className="flex items-center" scroll={true}>
-                  View My Work
+                <Link
+                  href="#projects"
+                  className="flex items-center"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('projects');
+                  }}
+                >
+                  <b>View My Work</b>
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full h-12 px-8 text-base bg-transparent"
-              >
-                <Link href="#contact" scroll={true}>
-                  Get In Touch
+              <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
+                <Link
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contact');
+                  }}
+                >
+                  <b>Get In Touch</b>
                 </Link>
               </Button>
             </div>
