@@ -57,6 +57,7 @@ export function HeroSection() {
               <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
                 <Link
                   href="#contact"
+                  className="flex items-center"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('contact');
@@ -78,7 +79,7 @@ export function HeroSection() {
             <div className="relative mx-auto max-w-md">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/40 bg-linear-to-b from-background to-muted/20">
                 <Image
-                  src="/placeholder.svg?height=400&width=400&text=Profile+Photo"
+                  src="assets/me/ski-selfie-square-min.jpg"
                   width={400}
                   height={400}
                   alt="Michael Loney"

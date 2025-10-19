@@ -20,14 +20,14 @@ export function ExperienceSection() {
           <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
             Experience
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Professional Journey</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Developer Journey</h2>
           <p className="max-w-[800px] text-muted-foreground md:text-lg">
             A timeline of my professional experience and key achievements in software development.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border"></div>
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.75 bg-border"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, i) => (

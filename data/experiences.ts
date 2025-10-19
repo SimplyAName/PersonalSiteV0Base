@@ -72,4 +72,19 @@ export const experiences: Experience[] = [
     ],
     technologies: ['Java', 'Haskell', 'Prolog', 'Machine Learning'],
   },
+  {
+    title: 'First project',
+    subtitle: 'Start up landing page',
+    company: '14 year old me',
+    startDate: '2012',
+    endDate: '2012',
+    location: 'Cardiff, UK',
+    description: 'Learnt how to code in Java so I could create a minecraft mod.',
+    achievements: [
+      'Lead a team of 6 to complete our large final year project',
+      'Learnt foundational knowledge',
+      'Graduated with a bachelors degree in Computer Science',
+    ],
+    technologies: ['Java', 'NetBeans', 'Modding'],
+  },
 ];
