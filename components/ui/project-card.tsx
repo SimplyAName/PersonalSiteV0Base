@@ -1,37 +1,40 @@
-'use client';
+"use client"
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ExternalLink, Github, ChevronDown } from 'lucide-react';
-import { Badge } from '@/components/ui/base/badge';
-import { Button } from '@/components/ui/base/button';
-import { Card, CardContent, CardFooter } from '@/components/ui/base/card';
-import type { Project } from '@/data/projects';
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ExternalLink, Github, ChevronDown } from "lucide-react"
+import { Badge } from "@/components/ui/base/badge"
+import { Button } from "@/components/ui/base/button"
+import { Card, CardContent, CardFooter } from "@/components/ui/base/card"
+import type { Project } from "@/data/projects"
 
 interface ProjectCardProps {
-  project: Project;
-  variant?: 'default' | 'compact';
+  project: Project
+  variant?: "default" | "compact"
 }
 
-export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) {
-  const isCompact = variant === 'compact';
-  const [isExpanded, setIsExpanded] = useState(false);
+export function ProjectCard({
+  project,
+  variant = "default",
+}: ProjectCardProps) {
+  const isCompact = variant === "compact"
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <Card
-      className={`overflow-hidden border-border/40 bg-linear-to-b from-background to-muted/10 backdrop-blur-sm hover:shadow-lg group h-full ${isCompact ? 'cursor-pointer' : ''} flex flex-col`}
+      className={`border-border/40 from-background to-muted/10 group h-full overflow-hidden bg-linear-to-b backdrop-blur-sm hover:shadow-lg ${isCompact ? "cursor-pointer" : ""} flex flex-col`}
       onClick={() => isCompact && setIsExpanded(!isExpanded)}
     >
       <div className="relative overflow-hidden">
         <Image
-          src={project.image || '/placeholder.svg'}
+          src={project.image || "/placeholder.svg"}
           alt={project.title}
           width={400}
           height={isCompact ? 200 : 300}
-          className={`w-full ${isCompact ? 'h-32' : 'h-48'} object-cover`}
+          className={`w-full ${isCompact ? "h-32" : "h-48"} object-cover`}
         />
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+        <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
           {project.codebase && (
             <Button size="sm" variant="secondary" asChild>
               <Link href={project.codebase} target="_blank">
@@ -50,38 +53,40 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
           )}
         </div>
       </div>
-      <CardContent className="flex flex-col grow pt-4">
-        <div className="flex items-center gap-2 mb-2">
-          <h3 className={`${isCompact ? 'text-base' : 'text-xl'} font-bold`}>{project.title}</h3>
+      <CardContent className="flex grow flex-col pt-4">
+        <div className="mb-2 flex items-center gap-2">
+          <h3 className={`${isCompact ? "text-base" : "text-xl"} font-bold`}>
+            {project.title}
+          </h3>
           <div className="flex items-center gap-2">
             {/* Project status indicator */}
             <div className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span
-                  className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                    project.status === 'in-progress'
-                      ? 'bg-yellow-400'
+                  className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${
+                    project.status === "in-progress"
+                      ? "bg-yellow-400"
                       : project.demo
-                        ? 'bg-green-400'
-                        : 'bg-red-400'
+                        ? "bg-green-400"
+                        : "bg-red-400"
                   }`}
                 ></span>
                 <span
-                  className={`relative inline-flex rounded-full h-2 w-2 ${
-                    project.status === 'in-progress'
-                      ? 'bg-yellow-500'
+                  className={`relative inline-flex h-2 w-2 rounded-full ${
+                    project.status === "in-progress"
+                      ? "bg-yellow-500"
                       : project.demo
-                        ? 'bg-green-500'
-                        : 'bg-red-500'
+                        ? "bg-green-500"
+                        : "bg-red-500"
                   }`}
                 ></span>
               </span>
-              <span className={`text-xs text-muted-foreground`}>
-                {project.status === 'in-progress'
-                  ? 'In Progress'
+              <span className={`text-muted-foreground text-xs`}>
+                {project.status === "in-progress"
+                  ? "In Progress"
                   : project.demo
-                    ? 'Available'
-                    : 'Unavailable'}
+                    ? "Available"
+                    : "Unavailable"}
               </span>
             </div>
           </div>
@@ -89,38 +94,49 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
         {isCompact ? (
           <>
             <div className="overflow-hidden">
-              <p className="text-sm text-muted-foreground font-medium">{project.subtitle}</p>
+              <p className="text-muted-foreground text-sm font-medium">
+                {project.subtitle}
+              </p>
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-sm pt-2">{project.description}</p>
+                <p className="pt-2 text-sm">{project.description}</p>
               </div>
             </div>
             <button
-              className="mt-2 text-xs text-primary flex items-center hover:underline"
+              className="text-primary mt-2 flex items-center text-xs hover:underline"
               onClick={(e: React.MouseEvent) => {
-                e.stopPropagation();
-                setIsExpanded(!isExpanded);
+                e.stopPropagation()
+                setIsExpanded(!isExpanded)
               }}
             >
-              {isExpanded ? 'Show less' : 'Read more'}
+              {isExpanded ? "Show less" : "Read more"}
               <div
-                className={`transition-all duration-200 ease-in-out ${isExpanded ? 'rotate-180' : 'rotate-0'}`}
+                className={`transition-all duration-200 ease-in-out ${isExpanded ? "rotate-180" : "rotate-0"}`}
               >
                 <ChevronDown />
               </div>
             </button>
           </>
         ) : (
-          <p className="text-base text-muted-foreground">{project.description}</p>
+          <p className="text-muted-foreground text-base">
+            {project.description}
+          </p>
         )}
       </CardContent>
       <CardFooter>
         <div className="flex flex-wrap gap-1">
-          {(isCompact ? project.technologies.slice(0, 3) : project.technologies).map((tech) => (
-            <Badge key={tech} variant="secondary" className="rounded-full text-xs">
+          {(isCompact
+            ? project.technologies.slice(0, 3)
+            : project.technologies
+          ).map((tech) => (
+            <Badge
+              key={tech}
+              variant="secondary"
+              className="rounded-full text-xs"
+            >
               {tech}
             </Badge>
           ))}
@@ -132,5 +148,5 @@ export function ProjectCard({ project, variant = 'default' }: ProjectCardProps) 
         </div>
       </CardFooter>
     </Card>
-  );
+  )
 }

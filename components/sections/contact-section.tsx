@@ -1,10 +1,10 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Mail, Download } from 'lucide-react';
-import { Button } from '@/components/ui/base/button';
-import { SocialLinks } from '@/components/ui/social-links';
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { Mail, Download } from "lucide-react"
+import { Button } from "@/components/ui/base/button"
+import { SocialLinks } from "@/components/ui/social-links"
 
 export function ContactSection() {
   return (
@@ -24,8 +24,8 @@ export function ContactSection() {
             Let's Work Together
           </h2>
           <p className="text-primary-foreground/80 mx-auto max-w-[700px] md:text-xl">
-            I'm always interested in new opportunities and exciting projects. Let's discuss how we
-            can bring your ideas to life.
+            I'm always interested in new opportunities and exciting projects.
+            Let's discuss how we can bring your ideas to life.
           </p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row">
             <Button
@@ -34,7 +34,10 @@ export function ContactSection() {
               className="h-12 rounded-full px-8 text-base"
               asChild
             >
-              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} target="_blank">
+              <Link
+                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
+                target="_blank"
+              >
                 <Mail className="mr-2 size-4" />
                 Send Email
               </Link>
@@ -60,5 +63,5 @@ export function ContactSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
