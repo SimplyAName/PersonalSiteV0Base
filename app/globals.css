@@ -161,3 +161,16 @@
     transform: translateY(0);
   }
 }
+
+@layer components {
+  /* Reusable grid / circuit-like background pattern used across sections */
+  .grid-pattern {
+    background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
+
+  /* Dark mode variant keeps the same pattern but with darker lines */
+  .dark .grid-pattern {
+    background-image: linear-gradient(to right, #1f1f1f 1px, transparent 1px), linear-gradient(to bottom, #1f1f1f 1px, transparent 1px);
+  }
+}
