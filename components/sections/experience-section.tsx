@@ -8,7 +8,7 @@ import { experiences } from '@/data/experiences';
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="w-full py-20 md:py-32">
+    <section id="experience" className="w-full py-20 md:py-32 circuit-pattern fill-background">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

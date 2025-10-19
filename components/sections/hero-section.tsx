@@ -12,7 +12,7 @@ import { scrollToSection } from '@/lib/utils';
 export function HeroSection() {
   return (
     <section id="hero" className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
-      <div className="container p-6 md:p-8 relative bg-white dark:bg-black grid-pattern  mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]">
+      <div className="container p-6 md:p-8 relative bg-white dark:bg-black grid-pattern mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
