@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Menu, X, Download } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/base/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { PersonalLogo } from "@/components/ui/personal-logo"
