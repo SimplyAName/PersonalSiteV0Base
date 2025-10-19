@@ -34,8 +34,9 @@ export function AboutSection() {
             Passionate About Technology
           </h2>
           <p className="max-w-[800px] text-muted-foreground md:text-lg">
-            With over 5 years of experience in software development, I specialize in creating
-            robust, scalable applications that solve real-world problems.
+            Life long technology enthusiast and full-time software developer.
+            {/* Over 5 years of experience in software development, creating robust, scalable
+            applications that solve real-world problems. */}
           </p>
         </motion.div>
 
@@ -49,26 +50,25 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold mb-4">My Journey</h3>
             <div className="text-muted-foreground mb-6 flex flex-col gap-2">
               <p>
-                I began my journey in software development during high school, initially creating
-                mods for games. Recognizing my logical mindset, I pursued an exam for my school's
-                computer science class, where I discovered a passion for building efficient and
-                creative solutions.
+                I got my start in high school building mods for games like Minecraft. That curiosity
+                for tinkering led me to take my school's computer science exam and eventually
+                discover that I really enjoy solving problems and building reliable, useful tools.
               </p>
               <p>
-                Since then, I have attended university and launched a startup while studying,
-                gaining experience in developing robust, real-world systems that scale with both
-                technology and teams.
+                From there I went to university and even launched a small startup while studying.
+                This was a great crash course in shipping real systems that need to work for actual
+                users and dev teams.
               </p>
               <p>
-                I believe in writing clean, maintainable code and staying up-to-date with the latest
-                technologies and best practices. When I'm not working, you can find me learning new
-                technologies or doing my best not to lose my online games.
+                On the clock I care about clean, maintainable code and keeping up with the latest
+                tech trends. Off the clock you'll usually catch me experimenting with something new
+                framework/technology or trying not to lose at my favourite online games.
               </p>
               <p>
-                My key talent is the ability to quickly pick up nearly any project. Whether it's an
-                existing code base of the finest spaghetti or new blazing fast tech-stack, I'm can
-                quickly start understanding the core of the project and begin finding issues,
-                improvement and start contributing.
+                One of my strengths is learning and understanding projects quickly. Whether I'm
+                facing some legacy spaghetti or a shiny new stack, I aim to understand the core
+                problem it's trying to solve first. I can then move fast and start contributing
+                improvements and ideas right away instead of adding half-baked idea.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
