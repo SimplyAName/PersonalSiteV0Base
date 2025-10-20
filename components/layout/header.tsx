@@ -1,75 +1,75 @@
-'use client';
+"use client"
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Menu, X, Download } from 'lucide-react';
-import { Button } from '@/components/ui/base/button';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { PersonalLogo } from '@/components/ui/personal-logo';
-import { scrollToSection } from '@/lib/utils';
+import {useState} from "react"
+import Link from "next/link"
+import {motion} from "framer-motion"
+import {Menu, X} from "lucide-react"
+import {Button} from "@/components/ui/base/button"
+import {ThemeToggle} from "@/components/ui/theme-toggle"
+import {PersonalLogo} from "@/components/ui/personal-logo"
+import {scrollToSection} from "@/lib/utils"
 
 interface HeaderProps {
-  activeSection: string;
+  activeSection: string
 }
 
-export function Header({ activeSection }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export function Header({activeSection}: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const highlightActiveSection = (section: string) => {
     return activeSection === section
-      ? 'text-foreground border-b-2 border-primary pb-1'
-      : 'text-muted-foreground';
-  };
+      ? "text-foreground border-b-2 border-primary pb-1"
+      : "text-muted-foreground"
+  }
 
   const handleScroll = (sectionId: string, event: React.MouseEvent) => {
-    event.preventDefault();
+    event.preventDefault()
     scrollToSection(sectionId, {
       onComplete: () => setMobileMenuOpen(false),
-    });
-  };
+    })
+  }
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-background/80 shadow-xs`}
+      className={`bg-background/80 sticky top-0 z-50 w-full shadow-xs backdrop-blur-lg transition-all duration-300`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link href="#hero" onClick={(e) => handleScroll('hero', e)}>
+        <Link href="#hero" onClick={(e) => handleScroll("hero", e)}>
           <PersonalLogo size={8} />
         </Link>
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden gap-8 md:flex">
           <Link
             href="#about"
-            onClick={(e) => handleScroll('about', e)}
-            className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
-              'about'
+            onClick={(e) => handleScroll("about", e)}
+            className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
+              "about"
             )}`}
           >
             About
           </Link>
           <Link
             href="#experience"
-            onClick={(e) => handleScroll('experience', e)}
-            className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
-              'experience'
+            onClick={(e) => handleScroll("experience", e)}
+            className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
+              "experience"
             )}`}
           >
             Experience
           </Link>
           <Link
             href="#projects"
-            onClick={(e) => handleScroll('projects', e)}
-            className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
-              'projects'
+            onClick={(e) => handleScroll("projects", e)}
+            className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
+              "projects"
             )}`}
           >
             Projects
           </Link>
           <Link
             href="#contact"
-            onClick={(e) => handleScroll('contact', e)}
-            className={`text-sm font-medium transition-colors hover:text-foreground ${highlightActiveSection(
-              'contact'
+            onClick={(e) => handleScroll("contact", e)}
+            className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
+              "contact"
             )}`}
           >
             Contact
@@ -89,53 +89,53 @@ export function Header({ activeSection }: HeaderProps) {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b"
+          initial={{opacity: 0, y: -20}}
+          animate={{opacity: 1, y: 0}}
+          exit={{opacity: 0, y: -20}}
+          className="bg-background/95 absolute inset-x-0 top-16 border-b backdrop-blur-lg md:hidden"
         >
-          <div className="container py-4 flex flex-col gap-4">
+          <div className="container flex flex-col gap-4 py-4">
             <Link
               href="#about"
               className={`py-2 text-sm font-medium transition-colors ${
-                activeSection === 'about'
-                  ? 'text-primary font-semibold border-l-2 border-primary pl-2'
-                  : 'text-foreground hover:text-primary'
+                activeSection === "about"
+                  ? "text-primary border-primary border-l-2 pl-2 font-semibold"
+                  : "text-foreground hover:text-primary"
               }`}
-              onClick={(e) => handleScroll('about', e)}
+              onClick={(e) => handleScroll("about", e)}
             >
               About
             </Link>
             <Link
               href="#experience"
               className={`py-2 text-sm font-medium transition-colors ${
-                activeSection === 'experience'
-                  ? 'text-primary font-semibold border-l-2 border-primary pl-2'
-                  : 'text-foreground hover:text-primary'
+                activeSection === "experience"
+                  ? "text-primary border-primary border-l-2 pl-2 font-semibold"
+                  : "text-foreground hover:text-primary"
               }`}
-              onClick={(e) => handleScroll('experience', e)}
+              onClick={(e) => handleScroll("experience", e)}
             >
               Experience
             </Link>
             <Link
               href="#projects"
               className={`py-2 text-sm font-medium transition-colors ${
-                activeSection === 'projects'
-                  ? 'text-primary font-semibold border-l-2 border-primary pl-2'
-                  : 'text-foreground hover:text-primary'
+                activeSection === "projects"
+                  ? "text-primary border-primary border-l-2 pl-2 font-semibold"
+                  : "text-foreground hover:text-primary"
               }`}
-              onClick={(e) => handleScroll('projects', e)}
+              onClick={(e) => handleScroll("projects", e)}
             >
               Projects
             </Link>
             <Link
               href="#contact"
               className={`py-2 text-sm font-medium transition-colors ${
-                activeSection === 'contact'
-                  ? 'text-primary font-semibold border-l-2 border-primary pl-2'
-                  : 'text-foreground hover:text-primary'
+                activeSection === "contact"
+                  ? "text-primary border-primary border-l-2 pl-2 font-semibold"
+                  : "text-foreground hover:text-primary"
               }`}
-              onClick={(e) => handleScroll('contact', e)}
+              onClick={(e) => handleScroll("contact", e)}
             >
               Contact
             </Link>
@@ -143,5 +143,5 @@ export function Header({ activeSection }: HeaderProps) {
         </motion.div>
       )}
     </header>
-  );
+  )
 }

@@ -1,29 +1,29 @@
-'use client';
+"use client"
 
-import Link from 'next/link';
-import { PersonalLogo } from '@/components/ui/personal-logo';
-import { scrollToSection } from '@/lib/utils';
+import Link from "next/link"
+import {PersonalLogo} from "@/components/ui/personal-logo"
+import {scrollToSection} from "@/lib/utils"
 
 interface FooterProps {
-  activeSection: string;
+  activeSection: string
 }
 
-export function Footer({ activeSection }: FooterProps) {
+export function Footer({activeSection}: FooterProps) {
   return (
-    <footer className="w-full border-t bg-background/95 backdrop-blur-xs relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_110%)]"></div>
+    <footer className="bg-background/95 relative w-full overflow-hidden border-t backdrop-blur-xs">
+      <div className="grid-pattern absolute inset-0 -z-10 h-full w-full bg-white mask-[radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_110%)] dark:bg-black"></div>
       <div className="container flex flex-col gap-4 px-4 py-8 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <PersonalLogo size={8} />
           <div className="flex gap-4">
             <Link
               href="#about"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('about');
+                e.preventDefault()
+                scrollToSection("about")
               }}
-              className={`text-sm transition-colors hover:text-foreground ${
-                activeSection === 'about' ? 'text-foreground font-medium' : 'text-muted-foreground'
+              className={`hover:text-foreground text-sm transition-colors ${
+                activeSection === "about" ? "text-foreground font-medium" : "text-muted-foreground"
               }`}
             >
               About
@@ -31,13 +31,13 @@ export function Footer({ activeSection }: FooterProps) {
             <Link
               href="#experience"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('experience');
+                e.preventDefault()
+                scrollToSection("experience")
               }}
-              className={`text-sm transition-colors hover:text-foreground ${
-                activeSection === 'experience'
-                  ? 'text-foreground font-medium'
-                  : 'text-muted-foreground'
+              className={`hover:text-foreground text-sm transition-colors ${
+                activeSection === "experience"
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground"
               }`}
             >
               Experience
@@ -45,13 +45,13 @@ export function Footer({ activeSection }: FooterProps) {
             <Link
               href="#projects"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('projects');
+                e.preventDefault()
+                scrollToSection("projects")
               }}
-              className={`text-sm transition-colors hover:text-foreground ${
-                activeSection === 'projects'
-                  ? 'text-foreground font-medium'
-                  : 'text-muted-foreground'
+              className={`hover:text-foreground text-sm transition-colors ${
+                activeSection === "projects"
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground"
               }`}
             >
               Projects
@@ -59,28 +59,28 @@ export function Footer({ activeSection }: FooterProps) {
             <Link
               href="#contact"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('contact');
+                e.preventDefault()
+                scrollToSection("contact")
               }}
-              className={`text-sm transition-colors hover:text-foreground ${
-                activeSection === 'contact'
-                  ? 'text-foreground font-medium'
-                  : 'text-muted-foreground'
+              className={`hover:text-foreground text-sm transition-colors ${
+                activeSection === "contact"
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground"
               }`}
             >
               Contact
             </Link>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-border/40 pt-4">
-          <p className="text-xs text-muted-foreground">
+        <div className="border-border/40 flex flex-col items-center justify-between gap-4 border-t pt-4 md:flex-row">
+          <p className="text-muted-foreground text-xs">
             &copy; {new Date().getFullYear()} Michael Loney. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-muted-foreground text-xs">
             Built with Next.js, Tailwind CSS, and Framer Motion
           </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
