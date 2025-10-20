@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/simplyanames-projects/v0-saas-landing-page)
+[![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-black?style=for-the-badge&logo=github)](https://simplyaname.github.io/PersonalSiteV0Base/)
 
 ## 🚀 Welcome to My Digital Space!
 
@@ -21,7 +21,7 @@ This is my personal portfolio website where I showcase my professional journey, 
 - **UI Components:** shadcn/ui
 - **Animations:** Framer Motion
 - **Language:** TypeScript
-- **Deployment:** Vercel
+- **Deployment:** GitHub Pages
 
 ## 🚦 Getting Started
 
@@ -83,6 +83,21 @@ This project is licensed under the MIT License - feel free to use it as inspirat
 
 ## 🔗 Deployment
 
-The site is automatically deployed to Vercel on every push to the main branch. Check out the live version at:
+The site is automatically deployed to GitHub Pages on every push to the main branch using GitHub Actions. The workflow:
 
-**[https://vercel.com/simplyanames-projects/v0-saas-landing-page](https://vercel.com/simplyanames-projects/v0-saas-landing-page)**
+1. Builds the site using Next.js static export
+2. Deploys the generated static files to the `gh-pages` branch
+3. Makes the site available at [https://simplyaname.github.io/PersonalSiteV0Base](https://simplyaname.github.io/PersonalSiteV0Base)
+
+### Manual Deployment
+
+You can also build and export the site locally:
+
+```bash
+# Build and export to the 'out' directory
+npm run export
+
+# The static files will be in ./out/
+```
+
+Note: The GitHub Actions workflow will handle the deployment automatically when you push to the main branch, but you can also trigger it manually from the Actions tab in the repository.

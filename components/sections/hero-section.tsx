@@ -11,8 +11,11 @@ import {scrollToSection} from "@/lib/utils"
 
 export function HeroSection() {
   return (
-    <section id="hero" className="w-full overflow-hidden py-20 md:py-32 lg:py-40">
-      <div className="grid-pattern relative container bg-white mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)] p-6 md:p-8 dark:bg-black">
+    <section
+      id="hero"
+      className="from-primary to-primary/80 w-full overflow-hidden bg-linear-to-tr py-20 md:py-32 lg:py-40"
+    >
+      <div className="grid-pattern relative container bg-white p-6 md:p-8 dark:bg-black">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{opacity: 0, x: -20}}

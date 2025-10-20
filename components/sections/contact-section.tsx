@@ -10,7 +10,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="from-primary to-primary/80 text-primary-foreground relative w-full overflow-hidden bg-linear-to-br py-20 md:py-32"
+      className="from-primary to-primary/80 relative w-full overflow-hidden bg-linear-to-bl py-20 md:py-32"
     >
       <div className="grid-pattern relative container bg-white p-8 md:p-16 dark:bg-black">
         <motion.div
@@ -23,7 +23,7 @@ export function ContactSection() {
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Let's Work Together
           </h2>
-          <p className="text-primary-foreground/80 mx-auto max-w-[700px] md:text-xl">
+          <p className="text-muted-foreground mx-auto max-w-[700px] md:text-xl">
             I'm always interested in new opportunities and exciting projects. Let's discuss how we
             can bring your ideas to life.
           </p>
@@ -42,7 +42,7 @@ export function ContactSection() {
             <Button
               size="lg"
               variant="outline"
-              className="h-12 rounded-full border-white bg-transparent px-8 text-base text-white hover:bg-white/10"
+              className="h-12 rounded-full bg-transparent px-8 text-base"
               asChild
             >
               <a href="/cv.pdf" download>
@@ -51,12 +51,7 @@ export function ContactSection() {
               </a>
             </Button>
           </div>
-          <SocialLinks
-            size={8}
-            baseColor="text-primary-foreground/80"
-            hoverColor="text-primary-foreground"
-            className="mt-8 gap-6"
-          />
+          <SocialLinks className="mt-8 gap-6" />
         </motion.div>
       </div>
     </section>
