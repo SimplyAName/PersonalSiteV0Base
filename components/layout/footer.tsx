@@ -1,14 +1,14 @@
 "use client"
 
 import Link from "next/link"
-import { PersonalLogo } from "@/components/ui/personal-logo"
-import { scrollToSection } from "@/lib/utils"
+import {PersonalLogo} from "@/components/ui/personal-logo"
+import {scrollToSection} from "@/lib/utils"
 
 interface FooterProps {
   activeSection: string
 }
 
-export function Footer({ activeSection }: FooterProps) {
+export function Footer({activeSection}: FooterProps) {
   return (
     <footer className="bg-background/95 relative w-full overflow-hidden border-t backdrop-blur-xs">
       <div className="grid-pattern absolute inset-0 -z-10 h-full w-full bg-white mask-[radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_110%)] dark:bg-black"></div>
@@ -23,9 +23,7 @@ export function Footer({ activeSection }: FooterProps) {
                 scrollToSection("about")
               }}
               className={`hover:text-foreground text-sm transition-colors ${
-                activeSection === "about"
-                  ? "text-foreground font-medium"
-                  : "text-muted-foreground"
+                activeSection === "about" ? "text-foreground font-medium" : "text-muted-foreground"
               }`}
             >
               About
@@ -76,8 +74,7 @@ export function Footer({ activeSection }: FooterProps) {
         </div>
         <div className="border-border/40 flex flex-col items-center justify-between gap-4 border-t pt-4 md:flex-row">
           <p className="text-muted-foreground text-xs">
-            &copy; {new Date().getFullYear()} Michael Loney. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Michael Loney. All rights reserved.
           </p>
           <p className="text-muted-foreground text-xs">
             Built with Next.js, Tailwind CSS, and Framer Motion

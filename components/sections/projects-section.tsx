@@ -1,43 +1,29 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/base/badge"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/base/tabs"
-import { ProjectCard } from "@/components/ui/project-card"
-import { projects } from "@/data/projects"
+import {motion} from "framer-motion"
+import {Badge} from "@/components/ui/base/badge"
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/base/tabs"
+import {ProjectCard} from "@/components/ui/project-card"
+import {projects} from "@/data/projects"
 
 export function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="bg-muted/30 relative w-full overflow-hidden py-20 md:py-32"
-    >
+    <section id="projects" className="bg-muted/30 relative w-full overflow-hidden py-20 md:py-32">
       <div className="grid-pattern absolute inset-0 -z-10 h-full w-full bg-white mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)] dark:bg-black"></div>
       <div className="container px-4 md:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.5}}
           className="mb-12 flex flex-col items-center justify-center space-y-4 text-center"
         >
-          <Badge
-            className="rounded-full px-4 py-1.5 text-sm font-medium"
-            variant="secondary"
-          >
+          <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
             Projects
           </Badge>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Featured Work
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Featured Work</h2>
           <p className="text-muted-foreground max-w-[800px] md:text-lg">
-            A selection of projects that showcase my skills and experience in
-            software development.
+            A selection of projects that showcase my skills and experience in software development.
           </p>
         </motion.div>
 
@@ -60,10 +46,10 @@ export function ProjectsSection() {
                 .map((project, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.5, delay: i * 0.1}}
                   >
                     <ProjectCard project={project} />
                   </motion.div>
@@ -76,10 +62,10 @@ export function ProjectsSection() {
               {projects.map((project, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.5, delay: i * 0.05}}
                 >
                   <ProjectCard project={project} variant="compact" />
                 </motion.div>

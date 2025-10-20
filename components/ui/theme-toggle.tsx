@@ -1,12 +1,12 @@
 "use client"
 
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
-import { Button } from "./base/button"
+import {Moon, Sun} from "lucide-react"
+import {useTheme} from "next-themes"
+import {useEffect, useState} from "react"
+import {Button} from "./base/button"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const {theme, setTheme} = useTheme()
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -18,12 +18,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      className="rounded-full"
-    >
+    <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
       {isClient && theme === "dark" ? (
         <Sun className="size-[18px]" />
       ) : (

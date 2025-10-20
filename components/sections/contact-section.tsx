@@ -1,10 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 import Link from "next/link"
-import { Mail, Download } from "lucide-react"
-import { Button } from "@/components/ui/base/button"
-import { SocialLinks } from "@/components/ui/social-links"
+import {Mail, Download} from "lucide-react"
+import {Button} from "@/components/ui/base/button"
+import {SocialLinks} from "@/components/ui/social-links"
 
 export function ContactSection() {
   return (
@@ -12,20 +12,20 @@ export function ContactSection() {
       id="contact"
       className="from-primary to-primary/80 text-primary-foreground relative w-full overflow-hidden bg-linear-to-br py-20 md:py-32"
     >
-      <div className="grid-pattern relative container bg-white mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_60%,transparent_100%)] p-8 md:p-16 dark:bg-black">
+      <div className="grid-pattern relative container bg-white p-8 md:p-16 dark:bg-black">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.5}}
           className="flex flex-col items-center justify-center space-y-6 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Let's Work Together
           </h2>
           <p className="text-primary-foreground/80 mx-auto max-w-[700px] md:text-xl">
-            I'm always interested in new opportunities and exciting projects.
-            Let's discuss how we can bring your ideas to life.
+            I'm always interested in new opportunities and exciting projects. Let's discuss how we
+            can bring your ideas to life.
           </p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row">
             <Button
@@ -34,10 +34,7 @@ export function ContactSection() {
               className="h-12 rounded-full px-8 text-base"
               asChild
             >
-              <Link
-                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
-                target="_blank"
-              >
+              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} target="_blank">
                 <Mail className="mr-2 size-4" />
                 Send Email
               </Link>

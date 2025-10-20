@@ -25,13 +25,7 @@ export const experiences: Experience[] = [
       "Brough new technologies into the company",
       "Implemented automated testing reducing bugs by 60%",
     ],
-    technologies: [
-      "React / Next.js",
-      "Svelet",
-      "Tailwind",
-      "Spring Boot",
-      "Azure",
-    ],
+    technologies: ["React / Next.js", "Svelet", "Tailwind", "Spring Boot", "Azure"],
   },
   {
     title: "Director / Software Developer",
@@ -59,10 +53,7 @@ export const experiences: Experience[] = [
     location: "Swansea, UK",
     description:
       "I created on a landing page for a new startup, generating sign ups as well as a prototype IOS app used by the owner to pitch and gain funding.\nMailChip and AWS S3 bucket were used to host it and manage customer interest. They both offer a free tier so the site could have as little costs as possible as it was a new startup",
-    achievements: [
-      "Fast turn around of prototypes",
-      "Created on nearly £0 budget",
-    ],
+    achievements: ["Fast turn around of prototypes", "Created on nearly £0 budget"],
     technologies: ["Flutter", "PHP", "Laravel", "AWS", "IOS", "Android"],
   },
   {
@@ -88,8 +79,7 @@ export const experiences: Experience[] = [
     startDate: "2012",
     endDate: "2012",
     location: "Cardiff, UK",
-    description:
-      "Learnt how to code in Java so I could create a minecraft mod.",
+    description: "Learnt how to code in Java so I could create a minecraft mod.",
     achievements: [
       "Lead a team of 6 to complete our large final year project",
       "Learnt foundational knowledge",

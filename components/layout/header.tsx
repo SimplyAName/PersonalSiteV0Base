@@ -1,19 +1,19 @@
 "use client"
 
-import { useState } from "react"
+import {useState} from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/base/button"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { PersonalLogo } from "@/components/ui/personal-logo"
-import { scrollToSection } from "@/lib/utils"
+import {motion} from "framer-motion"
+import {Menu, X} from "lucide-react"
+import {Button} from "@/components/ui/base/button"
+import {ThemeToggle} from "@/components/ui/theme-toggle"
+import {PersonalLogo} from "@/components/ui/personal-logo"
+import {scrollToSection} from "@/lib/utils"
 
 interface HeaderProps {
   activeSection: string
 }
 
-export function Header({ activeSection }: HeaderProps) {
+export function Header({activeSection}: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const highlightActiveSection = (section: string) => {
@@ -42,7 +42,7 @@ export function Header({ activeSection }: HeaderProps) {
             href="#about"
             onClick={(e) => handleScroll("about", e)}
             className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
-              "about",
+              "about"
             )}`}
           >
             About
@@ -51,7 +51,7 @@ export function Header({ activeSection }: HeaderProps) {
             href="#experience"
             onClick={(e) => handleScroll("experience", e)}
             className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
-              "experience",
+              "experience"
             )}`}
           >
             Experience
@@ -60,7 +60,7 @@ export function Header({ activeSection }: HeaderProps) {
             href="#projects"
             onClick={(e) => handleScroll("projects", e)}
             className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
-              "projects",
+              "projects"
             )}`}
           >
             Projects
@@ -69,7 +69,7 @@ export function Header({ activeSection }: HeaderProps) {
             href="#contact"
             onClick={(e) => handleScroll("contact", e)}
             className={`hover:text-foreground text-sm font-medium transition-colors ${highlightActiveSection(
-              "contact",
+              "contact"
             )}`}
           >
             Contact
@@ -80,16 +80,8 @@ export function Header({ activeSection }: HeaderProps) {
         </div>
         <div className="flex items-center gap-4 md:hidden">
           <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X className="size-5" />
-            ) : (
-              <Menu className="size-5" />
-            )}
+          <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
@@ -97,9 +89,9 @@ export function Header({ activeSection }: HeaderProps) {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
+          initial={{opacity: 0, y: -20}}
+          animate={{opacity: 1, y: 0}}
+          exit={{opacity: 0, y: -20}}
           className="bg-background/95 absolute inset-x-0 top-16 border-b backdrop-blur-lg md:hidden"
         >
           <div className="container flex flex-col gap-4 py-4">
