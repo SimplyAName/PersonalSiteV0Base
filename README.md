@@ -77,16 +77,12 @@ npm run build
 yarn build
 ```
 
-## 📝 License
-
-This project is licensed under the MIT License - feel free to use it as inspiration for your own portfolio!
-
 ## 🔗 Deployment
 
 The site is automatically deployed to GitHub Pages on every push to the main branch using GitHub Actions. The workflow:
 
 1. Builds the site using Next.js static export
-2. Deploys the generated static files to the `gh-pages` branch
+2. Deploys the generated static files as a pipeline artifact
 3. Makes the site available at [https://simplyaname.github.io/PersonalSiteV0Base](https://simplyaname.github.io/PersonalSiteV0Base)
 
 ### Manual Deployment
@@ -101,3 +97,7 @@ npm run export
 ```
 
 Note: The GitHub Actions workflow will handle the deployment automatically when you push to the main branch, but you can also trigger it manually from the Actions tab in the repository.
+
+## 📝 License
+
+This project is licensed under the MIT License - feel free to use it as inspiration for your own portfolio!
