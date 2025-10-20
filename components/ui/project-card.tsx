@@ -30,6 +30,7 @@ export function ProjectCard({project, variant = "default"}: ProjectCardProps) {
           width={400}
           height={isCompact ? 200 : 300}
           className={`w-full ${isCompact ? "h-32" : "h-48"} object-cover`}
+          loading="lazy"
         />
         <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
           {project.codebase && (

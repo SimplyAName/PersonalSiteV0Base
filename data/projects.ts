@@ -35,7 +35,7 @@ export const projects: Project[] = [
     subtitle: "Pal or Pokemon? Find out before Nintendo lawyers",
     description:
       "Pals Vs Pokemon is a little game created using SvelteKit. It is design to be popped up by anyone using Docker and Liquibase",
-    image: "/assets/projects/PalsVsPokemon/PVP-game-banner.jpg",
+    image: "/assets/projects/PalsVsPokemon/PVP-game-banner-min.jpg",
     technologies: ["SvelteKit", "Liquibase", "Prisma", "Tailwind"],
     codebase: "https://github.com/SimplyAName/PalVsPokemon",
     demo: "https://www.palsvspokemon.com/",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     subtitle: "Personal website you are looking at right now!",
     description:
       "A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools",
-    image: "/assets/projects/PersonalSite/personal_site.jpg",
+    image: "/assets/projects/PersonalSite/personal-site-min.jpg",
     technologies: ["Next.js", "Tailwind CSS", "AI tooling"],
     codebase: "https://github.com/SimplyAName/PersonalSiteV0Base",
     demo: "https://loney.dev",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     subtitle: "Rouge-like PvP battles, built with Godot",
     description:
       "Play round after round until on hits the score limit. Every loss the loser picks cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!",
-    image: "/assets/projects/WizardingGunsmiths/Wizarding_Gunsmiths_ai_wip_banner.jpg",
+    image: "/assets/projects/WizardingGunsmiths/Wizarding_Gunsmiths_ai_wip_banner-min.jpg",
     technologies: ["Godot", "GDScript", "Blender"],
     featured: true,
     status: "in-progress",
