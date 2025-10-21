@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Pals Vs Pokemon",
     subtitle: "Pal or Pokemon? Find out before Nintendo lawyers",
     description:
-      "Pals Vs Pokemon is a little game created using SvelteKit. It is design to be popped up by anyone using Docker and Liquibase",
+      "Pals Vs Pokemon is a little game created using SvelteKit. Players need to look at an image of a creature and pick if it's a Pokémon or PalWorld. It is design to be popped up by anyone using Docker and Liquibase",
     image: "/assets/projects/PalsVsPokemon/PVP-game-banner-min.jpg",
     technologies: ["SvelteKit", "Liquibase", "Prisma", "Tailwind"],
     codebase: "https://github.com/SimplyAName/PalVsPokemon",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     subtitle: "Personal website you are looking at right now!",
     description:
-      "A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools",
+      "A modern, responsive portfolio website built with Next.js and Tailwind CSS. This project also doubled as an experiment into AI coding tools using GitHub Copilot and V0",
     image: "/assets/projects/PersonalSite/personal-site-min.jpg",
     technologies: ["Next.js", "Tailwind CSS", "AI tooling"],
     codebase: "https://github.com/SimplyAName/PersonalSiteV0Base",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "Gun Wizards",
     subtitle: "Rouge-like PvP battles, built with Godot",
     description:
-      "Play round after round until on hits the score limit. Every loss the loser picks cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!",
+      "Play round after round until someone hits the score limit. After every round the losers pick cards to modify their character with powers like bullet speed, increased HP and new guns to create insane late game builds!",
     image: "/assets/projects/WizardingGunsmiths/Wizarding_Gunsmiths_ai_wip_banner-min.jpg",
     technologies: ["Godot", "GDScript", "Blender"],
     featured: true,
@@ -74,8 +74,7 @@ export const projects: Project[] = [
   {
     title: "Other",
     subtitle: "Should I include projects from work?",
-    description:
-      "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
+    description: "Example desc",
     image: "/placeholder.svg?height=300&width=400&text=GAIN",
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS"],
     featured: false,
