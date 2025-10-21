@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Pals Vs Pokemon",
     subtitle: "Pal or Pokemon? Find out before Nintendo lawyers",
     description:
-      "Pals Vs Pokemon is a little game created using SvelteKit. Players need to look at an image of a creature and pick if it's a Pokémon or PalWorld. It is design to be popped up by anyone using Docker and Liquibase",
+      "Pals Vs Pokemon is a little game created using SvelteKit. Players need to look at an image of a creature and pick if it's a Pokémon or PalWorld. It can be viewed on the website but it's also designed to be popped up by anyone using Docker and Liquibase",
     image: "/assets/projects/PalsVsPokemon/PVP-game-banner-min.jpg",
     technologies: ["SvelteKit", "Liquibase", "Prisma", "Tailwind"],
     codebase: "https://github.com/SimplyAName/PalVsPokemon",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     title: "GAIN",
     subtitle: "Social Discount platform with a website, IOS and Android app built by myself",
     description:
-      "My own social discount platform with a website and mobile apps in both stores. Closed down during COVID",
+      "A social discount platform create written from scratch by me. The IOS and Android mobile apps provided users with discounts in their local area. The website allowed partnered store to post any range of discounts and view how their premotion went with statics on their user base. Ran for 3 years before closing down during COVID",
     image: "/placeholder.svg?height=300&width=400&text=GAIN",
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS"],
     featured: false,
