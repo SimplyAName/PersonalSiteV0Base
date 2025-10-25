@@ -4,11 +4,11 @@ import {motion} from "framer-motion"
 import {Badge} from "@/components/ui/base/badge"
 
 const codeSkills = [
+  {name: "Java", level: 90},
+  {name: "Spring Boot", level: 95},
   {name: "JavaScript", level: 90},
   {name: "React / Next.js", level: 80},
   {name: "SveletKit", level: 60},
-  {name: "Java", level: 83},
-  {name: "Spring Boot", level: 87},
   {name: "Flutter", level: 65},
   {name: "Dart", level: 80},
 ]
