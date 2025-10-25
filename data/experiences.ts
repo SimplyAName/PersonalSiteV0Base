@@ -24,8 +24,9 @@ export const experiences: Experience[] = [
       "Implemented CI/CD to improve code quality and consistency",
       "Brough new technologies into the company",
       "Implemented automated testing reducing bugs by 60%",
+      "Official Postman training",
     ],
-    technologies: ["React / Next.js", "Svelet", "Tailwind", "Spring Boot", "Azure"],
+    technologies: ["React / Next.js", "Svelet", "Tailwind", "Spring Boot", "Azure", "Postman"],
   },
   {
     title: "Director / Software Developer",
@@ -35,14 +36,14 @@ export const experiences: Experience[] = [
     endDate: "2021",
     location: "Swansea, UK",
     description:
-      "My business I started in university, focused on providing a platform independent businesses. I started it with a partner, I was the developer and he was PR / customer acquisition. Together we worked as a great team, release a mobiles app on IOS and Android and gaining thousands of users and nearly 100 business.\n\nUnfortunately it shut down during COVID as it relied on brick and mortar stores and we had both moved out of Swansea at the end of university so we had to start from step 1 again",
+      "My business I started in university, focused on providing a platform for independent businesses. I started it with a partner, I was the developer and he was PR / customer acquisition. Together we worked as a great team, releasing mobiles app on IOS and Android as well as gaining thousands of users and over 100 business.",
     achievements: [
       "Released IOS and Android apps",
       "Multiple competitions and pitches won, gaining funding",
       "1000's of customers",
       "Learned 5 new programming languages",
     ],
-    technologies: ["Flutter", "PHP", "Laravel", "AWS", "IOS", "Android"],
+    technologies: ["Flutter", "Dart", "PHP", "Laravel", "AWS", "IOS", "Android"],
   },
   {
     title: "Freelance Software Developer",
@@ -71,20 +72,5 @@ export const experiences: Experience[] = [
       "Graduated with a bachelors degree in Computer Science",
     ],
     technologies: ["Java", "Haskell", "Prolog", "Machine Learning"],
-  },
-  {
-    title: "First project",
-    subtitle: "Start up landing page",
-    company: "14 year old me",
-    startDate: "2012",
-    endDate: "2012",
-    location: "Cardiff, UK",
-    description: "Learnt how to code in Java so I could create a minecraft mod.",
-    achievements: [
-      "Lead a team of 6 to complete our large final year project",
-      "Learnt foundational knowledge",
-      "Graduated with a bachelors degree in Computer Science",
-    ],
-    technologies: ["Java", "NetBeans", "Modding"],
   },
 ]

@@ -15,7 +15,7 @@ export function HeroSection() {
       id="hero"
       className="from-primary to-primary/80 w-full overflow-hidden bg-linear-to-tr py-20 md:py-32 lg:py-40"
     >
-      <div className="grid-pattern relative container bg-white p-6 md:p-8 dark:bg-black">
+      <div className="grid-pattern relative container rounded-2xl bg-white p-6 md:p-8 dark:bg-black">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{opacity: 0, x: -20}}

@@ -23,7 +23,7 @@ export function ProjectsSection() {
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Featured Work</h2>
           <p className="text-muted-foreground max-w-[800px] md:text-lg">
-            A selection of projects that showcase my skills and experience in software development.
+            Projects I've created, ranging from small experiments to large applications.
           </p>
         </motion.div>
 

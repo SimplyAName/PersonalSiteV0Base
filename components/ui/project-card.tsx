@@ -29,7 +29,7 @@ export function ProjectCard({project, variant = "default"}: ProjectCardProps) {
           alt={project.title}
           width={400}
           height={isCompact ? 200 : 300}
-          className={`w-full ${isCompact ? "h-32" : "h-48"} object-cover`}
+          className={`w-full ${isCompact ? "h-32" : "h-48"} ${project.imageFit ?? "object-cover"}`}
           loading="lazy"
         />
         <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
@@ -125,7 +125,7 @@ export function ProjectCard({project, variant = "default"}: ProjectCardProps) {
               {tech}
             </Badge>
           ))}
-          {project.technologies.length > 3 && (
+          {project.technologies.length > 3 && isCompact && (
             <Badge variant="secondary" className="rounded-full text-xs">
               +{project.technologies.length - 3}
             </Badge>
