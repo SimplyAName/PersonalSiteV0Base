@@ -15,7 +15,7 @@ export function HeroSection() {
       id="hero"
       className="from-primary to-primary/80 w-full overflow-hidden bg-linear-to-tr py-20 md:py-32 lg:py-40"
     >
-      <div className="grid-pattern relative container rounded-2xl bg-white p-6 md:p-8 dark:bg-black">
+      <div className="grid-pattern relative container bg-white p-6 md:p-8 lg:rounded-2xl dark:bg-black">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{opacity: 0, x: -20}}
@@ -37,6 +37,21 @@ export function HeroSection() {
             <h2 className="text-muted-foreground mb-6 text-xl md:text-2xl">
               Full Stack Developer & Software Engineer
             </h2>
+            {/* For small screens: hidden and shows other image on larger screen */}
+            <div className="my-4 block lg:hidden">
+              <div className="relative mx-auto max-w-xs">
+                <div className="border-border/40 from-background to-muted/20 overflow-hidden rounded-2xl border bg-linear-to-b shadow-2xl">
+                  <Image
+                    src="assets/me/ski-selfie-square-min.jpg"
+                    width={300}
+                    height={300}
+                    alt="Michael Loney"
+                    className="h-auto w-full"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
             <p className="text-muted-foreground mb-8 max-w-2xl text-lg">
               Writing robust software with clean code and agile development practices for over 5
               years. Passionate about technology since forever
@@ -75,7 +90,7 @@ export function HeroSection() {
             initial={{opacity: 0, x: 20}}
             animate={{opacity: 1, x: 0}}
             transition={{duration: 0.7, delay: 0.2}}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="relative mx-auto max-w-md">
               <div className="border-border/40 from-background to-muted/20 overflow-hidden rounded-2xl border bg-linear-to-b shadow-2xl">
@@ -88,8 +103,6 @@ export function HeroSection() {
                   priority
                 />
               </div>
-              <div className="from-primary/30 to-secondary/30 absolute -right-6 -bottom-6 -z-10 h-[200px] w-[200px] rounded-full bg-linear-to-br opacity-70 blur-3xl"></div>
-              <div className="from-secondary/30 to-primary/30 absolute -top-6 -left-6 -z-10 h-[200px] w-[200px] rounded-full bg-linear-to-br opacity-70 blur-3xl"></div>
             </div>
           </motion.div>
         </div>
