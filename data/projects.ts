@@ -6,6 +6,7 @@ export type Project = {
   subtitle: string
   description: string
   image: string
+  imageFit?: string
   technologies: string[]
   codebase?: string
   demo?: string
@@ -67,15 +68,8 @@ export const projects: Project[] = [
     subtitle: "Social Discount platform with a website, IOS and Android app built by myself",
     description:
       "A social discount platform create written from scratch by me. The IOS and Android mobile apps provided users with discounts in their local area. The website allowed partnered store to post any range of discounts and view how their premotion went with statics on their user base. Ran for 3 years before closing down during COVID",
-    image: "/placeholder.svg?height=300&width=400&text=GAIN",
-    technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS"],
-    featured: false,
-  },
-  {
-    title: "Other",
-    subtitle: "Should I include projects from work?",
-    description: "Example desc",
-    image: "/placeholder.svg?height=300&width=400&text=GAIN",
+    image: "assets/projects/GAIN/gain-big-logo.webp",
+    imageFit: "object-contain",
     technologies: ["Laravel", "Flutter", "IOS", "Android", "AWS"],
     featured: false,
   },
