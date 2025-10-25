@@ -8,9 +8,8 @@ const inter = Inter({subsets: ["latin"]})
 
 export const metadata: Metadata = {
   title: "Michael Loney - Software Engineer",
-  description:
-    "Personal portfolio of John Doe, showcasing experience in software development, web applications, and innovative digital solutions.",
-  generator: "v0.app",
+  description: "Michael Loney, a software developer for over 5 years.",
+  generator: "Next.js",
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
