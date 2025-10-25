@@ -48,27 +48,28 @@ export function AboutSection() {
             transition={{duration: 0.5}}
           >
             <h3 className="mb-4 text-2xl font-bold">My Journey</h3>
+
             <div className="text-muted-foreground mb-6 flex flex-col gap-2">
               <p>
-                I got my start in high school building mods for games like Minecraft. That curiosity
-                for tinkering led me to take my school's computer science exam and eventually
-                discover that I really enjoy solving problems and building reliable, useful tools.
+                I discovered my love for technology and programming in high school, building mods
+                for games like Minecraft. This first taste led me to take my school's computing exam
+                for a competitive new course they'd just started. Through this education and
+                self-learning, I deepened my love for solving problems and building reliable, useful
+                tools.
               </p>
               <p>
-                From there I went to university and even launched a small startup while studying.
-                This was a great crash course in shipping real systems that need to work for actual
-                users and dev teams.
+                After graduating from high school, I went to Swansea University to continue studying
+                Computer Science. Alongside studying, I launched my own startup with my housemate
+                Tom. We competed against other entrepreneurs and won a small amount of funding,
+                which we used to launch our MVP and acquire our first users! This was a great crash
+                course in shipping real systems that needed to work for both users and dev teams.
               </p>
               <p>
-                On the clock I care about clean, maintainable code and keeping up with the latest
-                tech trends. Off the clock you'll usually catch me experimenting with something new
-                framework/technology or trying not to lose at my favourite online games.
-              </p>
-              <p>
-                One of my strengths is learning and understanding projects quickly. Whether I'm
-                facing some legacy spaghetti or a shiny new stack, I aim to understand the core
-                problem it's trying to solve first. I can then move fast and start contributing
-                improvements and ideas right away instead of adding half-baked idea.
+                Since then, I've continued to grow my knowledge and skills, carrying it into my work
+                to write clean, maintainable code and leverage the latest tech to improve efficiency
+                and reduce the need for manual work. In my free time, I like to experiment with new
+                frameworks or technology, as well as trying not to lose at my favourite online
+                games.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

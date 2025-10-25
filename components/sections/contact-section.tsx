@@ -24,8 +24,9 @@ export function ContactSection() {
             Let's Work Together
           </h2>
           <p className="text-muted-foreground mx-auto max-w-[700px] md:text-xl">
-            I'm always interested in new opportunities and exciting projects. Let's discuss how we
-            can bring your ideas to life.
+            I'm always interested in new opportunities and exciting projects.
+            <br />
+            Let's discuss how we can bring your ideas to life.
           </p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row">
             <Button
@@ -45,7 +46,7 @@ export function ContactSection() {
               className="h-12 rounded-full bg-transparent px-8 text-base"
               asChild
             >
-              <a href="/cv.pdf" download>
+              <a href="/assets/me/michael-loney-cv.pdf" download>
                 <Download className="mr-2 size-4" />
                 Download CV
               </a>
