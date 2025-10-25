@@ -35,7 +35,7 @@ export const projects: Project[] = [
     title: "Pals Vs Pokémon",
     subtitle: "Pal or Pokémon? Find out before Nintendo lawyers",
     description:
-      "Pals Vs Pokémon is a little game created using SvelteKit. Players need to look at an image of a creature and pick if it's a Pokémon or PalWorld. It can be played on the website but it's also designed to be popped up by anyone using Docker and Liquibase",
+      "Pals Vs Pokémon is a little game created using SvelteKit. Players need to look at an image of a creature and pick if it's a Pokémon or PalWorld. It can be played on the website but it's designed to be popped up by anyone using Docker and Liquibase",
     image: "/assets/projects/PalsVsPokemon/PVP-game-banner-min.jpg",
     technologies: ["SvelteKit", "Tailwind", "Liquibase", "Prisma", "Docker"],
     codebase: "https://github.com/SimplyAName/PalVsPokemon",
