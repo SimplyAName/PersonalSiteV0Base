@@ -125,7 +125,7 @@ export function ProjectCard({project, variant = "default"}: ProjectCardProps) {
               {tech}
             </Badge>
           ))}
-          {project.technologies.length > 3 && (
+          {project.technologies.length > 3 && isCompact && (
             <Badge variant="secondary" className="rounded-full text-xs">
               +{project.technologies.length - 3}
             </Badge>
