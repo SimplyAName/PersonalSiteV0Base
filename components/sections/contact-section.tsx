@@ -12,7 +12,7 @@ export function ContactSection() {
       id="contact"
       className="from-primary to-primary/80 relative w-full overflow-hidden bg-linear-to-bl py-20 md:py-32"
     >
-      <div className="grid-pattern relative container bg-white p-8 md:p-16 dark:bg-black">
+      <div className="grid-pattern relative container rounded-xl bg-white p-8 md:p-16 dark:bg-black">
         <motion.div
           initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
